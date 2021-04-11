@@ -1,1 +1,243 @@
-<h1>Hello! Im Joshua Dablo</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>John Joshua Dablo</title>
+  <base href="http://localhost:8888/johnjoshuadablo.github.io/">
+  <link rel="shortcut icon" href="http://localhost:8888/johnjoshuadablo.github.io/favicon.ico" />
+</head>
+<style>
+  body {
+    background-image: url('http://localhost:8888/johnjoshuadablo.github.io/images/background.png');
+    /* background-color: black; */
+    width: '100%';
+  }
+
+  h1 {
+    color: blue;
+  }
+
+  p {
+    color: black;
+  }
+
+  p.welcome {
+    font-size: 50px;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+
+  .header {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .welcome {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .details {
+    position: relative;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .avatar {
+    max-height: 150px;
+    border-radius: 50%;
+  }
+
+  .more-info {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  h1.link {
+    padding: 10px;
+    background-color: yellow;
+    color: grey;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  p.footer {
+    font-size: 10px;
+  }
+
+  .random-gif {
+    position: absolute;
+    left: 10%;
+    top: 80%;
+  }
+
+  .random-gif1 {
+    position: absolute;
+    right: 10%;
+    top: 60%;
+  }
+
+  .random-gif2 {
+    position: absolute;
+    right: 10%;
+    top: 100%;
+  }
+</style>
+
+<style>
+  .bounce {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    background: blue;
+    color: red;
+    border: 1px solid red;
+  }
+
+  .bounce p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    color: red;
+    text-align: center;
+    -moz-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    -moz-animation: bouncing-text 5s linear infinite alternate;
+    -webkit-animation: bouncing-text 5s linear infinite alternate;
+    animation: bouncing-text 10s linear infinite alternate;
+  }
+
+  @-moz-keyframes bouncing-text {
+    0% {
+      -moz-transform: translateX(50%);
+    }
+
+    100% {
+      -moz-transform: translateX(-50%);
+    }
+  }
+
+  @-webkit-keyframes bouncing-text {
+    0% {
+      -webkit-transform: translateX(50%);
+    }
+
+    100% {
+      -webkit-transform: translateX(-50%);
+    }
+  }
+
+  @keyframes bouncing-text {
+    0% {
+      -moz-transform: translateX(50%);
+      -webkit-transform: translateX(50%);
+      transform: translateX(50%);
+    }
+
+    100% {
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<style>
+  /* width */
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+  }
+</style>
+
+<body>
+
+  <div class="header">
+    <div class="welcome">
+      <img height="80" src="images/stars.gif">
+      <img style="margin-left:5%; margin-right: 5%;" height="100" src="images/welcome.gif">
+      <img height="80" src="images/stars.gif">
+    </div>
+    <p style="margin-top: 2%;" class="welcome">
+      TO MY
+    </p>
+    <p style="line-height: 0%;" class="welcome">
+      WEBSITE!!!
+    </p>
+    <div class="bounce">
+      <p>HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!!</p>
+    </div>
+  </div>
+
+  <img class="random-gif" src="images/unicorn.gif">
+  <img class="random-gif1" src="images/titan.gif">
+  <img class="random-gif2" src="images/arnold.gif">
+
+  <div class="details">
+    <img style="border:5px groove gold;" class="avatar" src="images/user.png">
+    <h2 style="background-color:coral; color: white;  padding: 20px;">Name: John Joshua S. Dablo</h2>
+    <h2 style="background-color:violet; color: white; margin-top: -3px; padding: 10px;">Zodiac $ign: Dragon</h2>
+    <h2 style="background-color:greenyellow; color: white; margin-top: -3px; padding: 10px;">Country: Philippines</h2>
+    <h2 style="background-color:aqua; color: white; margin-top: -3px; padding: 10px;">Skillz: ✨WEBSITE
+      DESIGNING✨ (JK, Really, I can't), HTML, Programming skilzz</h2>
+    <h2 style="background-color:midnightblue; color: white; margin-top: -3px; padding: 10px;">Email: (づ｡◕‿‿◕｡)づ
+      (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ≧◡≦</h2>
+    <p>joshuadablo.jd@gmail.com</p>
+  </div>
+  <div class="bounce">
+    <p>HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!!</p>
+  </div>
+
+  <div class="more-info">
+    <img height="80" src="images/fire.gif">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <h1 class="link">CLICK HERE TO KNOW MORE ABOUT ME!!!</h1>
+    </a>
+    <img height="80" src="images/fire.gif">
+  </div>
+
+  <div class="footer">
+    <p class="footer" style="color: whitesmoke;">Disclaimer: This site is for entertainment purpose only. I do not own
+      any picture used in this website.
+    </p>
+  </div>
+</body>
+
+</html>
