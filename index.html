@@ -225,7 +225,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
-      margin-top: 76px;
+      margin-top: 30px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -252,6 +252,36 @@
       font-size: 24px;
       line-height: 1.22;
       font-weight: 800;
+    }
+
+    .credibility-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 58px;
+    }
+
+    .credibility-item {
+      min-height: 112px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .credibility-item strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .credibility-item span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     .section {
@@ -375,6 +405,50 @@
       background: var(--panel-strong);
       font-size: 11px;
       font-weight: 900;
+    }
+
+    .pain-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.75fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+      padding: clamp(34px, 6vw, 64px);
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .pain-panel .section-kicker {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .pain-panel h2 {
+      color: var(--white);
+    }
+
+    .pain-copy {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .pain-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pain-list li {
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 15.5px;
+      line-height: 1.48;
     }
 
     .grid-3 {
@@ -505,6 +579,47 @@
       display: block;
       font-size: 18px;
       line-height: 1.38;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .why-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .why-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--accent-dark);
+      background: var(--panel-strong);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .why-item strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    .why-item p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.58;
     }
 
     .about {
@@ -680,8 +795,10 @@
       }
 
       .hero-proof,
+      .credibility-strip,
       .section-heading,
       .two-column,
+      .pain-panel,
       .grid-3,
       .mini-grid,
       .case-feature,
@@ -731,6 +848,7 @@
 
       .proof-item,
       .card,
+      .credibility-item,
       .mini-card,
       details,
       .process-step {
@@ -759,7 +877,7 @@
           data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
           data-cal-namespace="free-automation-discovery-call"
           data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
-          Book a Free Discovery Call
+          Book My Free Discovery Call
         </a>
       </nav>
     </header>
@@ -770,8 +888,8 @@
           <p class="eyebrow">Automation systems for growing SMEs</p>
           <h1 id="hero-title">Reduce Costs. Save Time. Automate Repetitive Work.</h1>
           <p class="hero-copy">
-            I build custom automation systems that reduce costs, save businesses time, and eliminate repetitive work
-            across operations, reporting, sales handoffs, and back-office workflows.
+            I help growing businesses reduce operational costs, save time, and eliminate repetitive work through custom
+            automation systems.
           </p>
           <div class="hero-actions">
             <a class="button button-primary"
@@ -779,9 +897,24 @@
               data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
               data-cal-namespace="free-automation-discovery-call"
               data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
-              Book a Free Discovery Call
+              Book My Free Discovery Call
             </a>
             <a class="button button-secondary" href="#case-study">See the approach</a>
+          </div>
+
+          <div class="credibility-strip" aria-label="Credibility">
+            <div class="credibility-item">
+              <strong>7+ years building software and automation</strong>
+              <span>Practical experience turning business operations into maintainable systems.</span>
+            </div>
+            <div class="credibility-item">
+              <strong>AI, ERP, inventory, reporting</strong>
+              <span>Experience across internal systems, automation, mobile apps, and cloud architecture.</span>
+            </div>
+            <div class="credibility-item">
+              <strong>Business-first implementation</strong>
+              <span>Technology decisions start with cost, workflow, ownership, and team adoption.</span>
+            </div>
           </div>
 
           <div class="hero-proof" aria-label="Who this is for">
@@ -840,6 +973,28 @@
                 <span>Give owners and managers a clearer view of status, blockers, and next actions.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="why-automate" aria-labelledby="why-automate-title">
+        <div class="section-inner">
+          <div class="pain-panel">
+            <div>
+              <p class="section-kicker">Why automate</p>
+              <h2 id="why-automate-title">What happens if you do not automate?</h2>
+              <p class="pain-copy" style="margin-top: 22px;">
+                Businesses rarely notice how much repetitive work costs until they calculate it. Automation is not about
+                replacing people. It is about letting your team focus on work that actually creates value.
+              </p>
+            </div>
+            <ul class="pain-list">
+              <li>Employees spend hours every week on manual tasks that do not require judgment.</li>
+              <li>Managers become bottlenecks for approvals, updates, and repeated follow-ups.</li>
+              <li>Reports arrive late because data collection still depends on chasing people.</li>
+              <li>Important customer or operational follow-ups are missed when the business gets busy.</li>
+              <li>Growth requires hiring more people instead of improving the process.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -948,34 +1103,33 @@
           <article class="case-feature">
             <div class="case-content">
               <span class="case-tag">Operations automation</span>
-              <h3>From scattered inputs to a repeatable reporting system.</h3>
+              <h3>Before, every reporting cycle depended on manual chasing.</h3>
               <p>
-                A growing team should not need to rebuild the same report from scratch every cycle. The improved system
-                starts by defining who owns each input, when it is due, what needs to be checked, and how exceptions
-                should be surfaced before leadership reviews the numbers.
+                The operations team spent several hours every reporting cycle collecting spreadsheets from multiple
+                departments, checking inconsistencies, and following up with missing information.
               </p>
               <p>
-                The workflow then becomes easier to run: data collection is structured, reminders are automatic, status
-                is visible, and the team spends less time chasing updates.
+                The real problem was not the report. It was the unreliable process around the report: unclear ownership,
+                late inputs, repeated reminders, and no central view of what was complete.
               </p>
               <ul class="case-list">
-                <li>Clarified ownership so every input has a responsible person and deadline.</li>
-                <li>Reduced manual follow-up with automated reminders and status visibility.</li>
-                <li>Created a repeatable reporting process that can scale with the business.</li>
+                <li>Multiple departments submitted data in different formats.</li>
+                <li>Managers had to chase people manually before deadlines.</li>
+                <li>Leadership had limited visibility until the report was already late.</li>
               </ul>
             </div>
             <div class="case-points">
               <div class="case-point">
-                <span>Business problem</span>
-                <strong>Leadership needed reliable reporting, but the process depended on manual chasing and inconsistent inputs.</strong>
+                <span>Before</span>
+                <strong>Reporting depended on spreadsheets, reminders, inconsistent inputs, and manual review.</strong>
               </div>
               <div class="case-point">
-                <span>System designed</span>
-                <strong>Structured intake, owner tracking, validation rules, reminders, summary views, and exception alerts.</strong>
+                <span>Solution</span>
+                <strong>Designed structured intake, automated reminders, ownership tracking, validation rules, and centralized status monitoring.</strong>
               </div>
               <div class="case-point">
-                <span>Business impact</span>
-                <strong>Less repeated follow-up, faster visibility, cleaner accountability, and fewer reporting surprises.</strong>
+                <span>Result</span>
+                <strong>Reporting preparation was reduced significantly, managers gained visibility, and follow-up became the exception instead of the routine.</strong>
               </div>
             </div>
           </article>
@@ -1033,6 +1187,51 @@
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#contact">Start with a discovery call</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="why-me" aria-labelledby="why-me-title">
+        <div class="section-inner two-column">
+          <div>
+            <p class="section-kicker">Why work with me</p>
+            <h2 id="why-me-title">I do not start by selling you software.</h2>
+          </div>
+          <div>
+            <p class="large-copy">
+              Unlike traditional software projects, I begin by understanding how your business operates before
+              recommending technology.
+            </p>
+            <div class="why-list" style="margin-top: 28px;">
+              <div class="why-item">
+                <span class="why-number">01</span>
+                <div>
+                  <strong>Business-first thinking</strong>
+                  <p>The workflow, cost, owner, and operational outcome come before the tool.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <span class="why-number">02</span>
+                <div>
+                  <strong>Practical solutions</strong>
+                  <p>The best system is the one your team can actually use, maintain, and improve.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <span class="why-number">03</span>
+                <div>
+                  <strong>Clear communication</strong>
+                  <p>You get plain-language decisions, tradeoffs, and next steps instead of technical noise.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <span class="why-number">04</span>
+                <div>
+                  <strong>Long-term maintainability</strong>
+                  <p>Systems are designed so they keep working as your team, tools, and processes change.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1118,7 +1317,7 @@
 
       <section class="cta" id="contact" aria-labelledby="contact-title">
         <div class="cta-inner">
-          <h2 id="contact-title">Let us find the workflow your team should stop doing manually.</h2>
+          <h2 id="contact-title">Let us identify one workflow you should never do manually again.</h2>
           <p>
             Book a free discovery call. In the first conversation, we will clarify the manual process, estimate the
             business cost of keeping it manual, and decide whether automation is worth pursuing.
@@ -1133,7 +1332,7 @@
             data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
             data-cal-namespace="free-automation-discovery-call"
             data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
-            Book a Free Discovery Call
+            Book My Free Discovery Call
           </a>
         </div>
       </section>
