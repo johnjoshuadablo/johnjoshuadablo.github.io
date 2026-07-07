@@ -20,11 +20,10 @@ Use this checklist to collect sanitized screenshots and visuals for each case st
 
 ## PC Build Gallery AI Data Entry
 
-- [ ] n8n workflow overview showing gallery intake, metadata improvement, image validation, upload, and publishing (`pc-build-gallery-ai-data-entry/n8n-workflow-overview.png`)
-- [ ] Before/after gallery entry: raw/rough build data vs cleaned title, tags, description (`pc-build-gallery-ai-data-entry/before-after-gallery-entry.png`)
-- [ ] Image validation screenshot: valid PC image vs rejected/invalid image branch (`pc-build-gallery-ai-data-entry/image-validation-branch.png`)
-- [ ] AI-generated setup image example with watermark (`pc-build-gallery-ai-data-entry/ai-generated-setup-image.png`)
-- [ ] Final published gallery page screenshot (`pc-build-gallery-ai-data-entry/published-gallery-page.png`)
+- [x] n8n workflow overview showing gallery intake, metadata improvement, image validation, upload, and publishing (`pc-build-gallery-ai-data-entry/n8n-workflow-overview.png`)
+- [x] Before/after gallery entry: raw/rough build data vs cleaned title, tags, description (`pc-build-gallery-ai-data-entry/before-after-gallery-entry.png`)
+- [x] Image validation screenshot: valid PC image vs rejected/invalid image branch (`pc-build-gallery-ai-data-entry/image-validation-branch.png`)
+- [x] AI-generated setup image example with watermark (`pc-build-gallery-ai-data-entry/ai-generated-setup-image.png`)
 
 ## Auto Website Blogs
 
