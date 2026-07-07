@@ -311,6 +311,11 @@
       line-height: 1.72;
     }
 
+    .what-stack {
+      display: grid;
+      gap: 24px;
+    }
+
     .outcome-list {
       display: grid;
       gap: 14px;
@@ -325,6 +330,33 @@
       color: var(--muted);
       font-size: 16px;
       line-height: 1.55;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.28;
+    }
+
+    .mini-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
     }
 
     .check {
@@ -421,6 +453,18 @@
       color: var(--muted);
       font-size: 17px;
       line-height: 1.72;
+    }
+
+    .case-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .case-list li {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.6;
     }
 
     .case-points {
@@ -566,6 +610,23 @@
       line-height: 1.65;
     }
 
+    .cta-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .cta-meta span {
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .cta .button-primary {
       margin-top: 32px;
       color: var(--ink);
@@ -612,6 +673,7 @@
       .section-heading,
       .two-column,
       .grid-3,
+      .mini-grid,
       .case-feature,
       .about,
       .faq {
@@ -659,6 +721,7 @@
 
       .proof-item,
       .card,
+      .mini-card,
       details,
       .process-step {
         padding: 22px;
@@ -726,25 +789,39 @@
         <div class="section-inner two-column">
           <div>
             <p class="section-kicker">What I do</p>
-            <h2 id="what-i-do-title">I turn manual business workflows into reliable systems.</h2>
+            <h2 id="what-i-do-title">I find the repetitive work costing your business time, then build the system that removes it.</h2>
           </div>
-          <div>
+          <div class="what-stack">
             <p class="large-copy">
-              The goal is not more software. The goal is fewer bottlenecks, faster decisions, and work that no longer
-              depends on people copying data between tools.
+              The goal is not more software. The goal is to make operations lighter: fewer manual handoffs, fewer
+              missed follow-ups, cleaner reporting, and less work trapped in spreadsheets and inboxes.
             </p>
             <div class="outcome-list">
               <div class="outcome">
                 <span class="check">OK</span>
-                <p>Map the repetitive work that slows your team down.</p>
+                <p>Document the workflow as it actually happens, including the people, tools, approvals, and exceptions.</p>
               </div>
               <div class="outcome">
                 <span class="check">OK</span>
-                <p>Design a practical automation system around your current tools and team.</p>
+                <p>Identify which steps should be automated, simplified, delegated, or left manual because they need judgment.</p>
               </div>
               <div class="outcome">
                 <span class="check">OK</span>
-                <p>Ship workflows that reduce manual follow-ups, duplicate entry, and operational blind spots.</p>
+                <p>Build a reliable system your team can use without needing to understand the technical details behind it.</p>
+              </div>
+            </div>
+            <div class="mini-grid" aria-label="Automation outcomes">
+              <div class="mini-card">
+                <strong>Save team hours</strong>
+                <span>Remove recurring admin work that repeats every day, week, or month.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Reduce errors</strong>
+                <span>Limit copy-paste mistakes, missed updates, and inconsistent data handling.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Improve visibility</strong>
+                <span>Give owners and managers a clearer view of status, blockers, and next actions.</span>
               </div>
             </div>
           </div>
@@ -845,39 +922,44 @@
           <div class="section-heading">
             <div>
               <p class="section-kicker">Featured case study</p>
-              <h2 id="case-study-title">A reporting workflow built for speed, accuracy, and less follow-up.</h2>
+              <h2 id="case-study-title">A manual reporting workflow redesigned into a cleaner operating rhythm.</h2>
             </div>
             <p class="section-lede">
-              The strongest automation projects usually start with a painful recurring process: the same data requests,
-              the same spreadsheet cleanup, the same status questions, and the same deadline pressure.
+              This is the type of project that creates leverage fast: recurring reporting that depends on reminders,
+              manual collection, spreadsheet cleanup, and last-minute coordination.
             </p>
           </div>
           <article class="case-feature">
             <div class="case-content">
               <span class="case-tag">Operations automation</span>
-              <h3>From manual reporting cycle to a repeatable operating system.</h3>
+              <h3>From scattered inputs to a repeatable reporting system.</h3>
               <p>
-                The work starts by documenting who sends data, where it lands, what needs validation, and which
-                decisions depend on the report. From there, the system removes avoidable admin work and keeps people
-                focused on exceptions instead of routine preparation.
+                A growing team should not need to rebuild the same report from scratch every cycle. The improved system
+                starts by defining who owns each input, when it is due, what needs to be checked, and how exceptions
+                should be surfaced before leadership reviews the numbers.
               </p>
               <p>
-                The result is a workflow that is easier to run, easier to audit, and easier to improve as the business
-                grows.
+                The workflow then becomes easier to run: data collection is structured, reminders are automatic, status
+                is visible, and the team spends less time chasing updates.
               </p>
+              <ul class="case-list">
+                <li>Clarified ownership so every input has a responsible person and deadline.</li>
+                <li>Reduced manual follow-up with automated reminders and status visibility.</li>
+                <li>Created a repeatable reporting process that can scale with the business.</li>
+              </ul>
             </div>
             <div class="case-points">
               <div class="case-point">
                 <span>Business problem</span>
-                <strong>Reports took too much manual coordination and were vulnerable to late or inconsistent inputs.</strong>
+                <strong>Leadership needed reliable reporting, but the process depended on manual chasing and inconsistent inputs.</strong>
               </div>
               <div class="case-point">
                 <span>System designed</span>
-                <strong>Data intake, validation rules, reminders, summary views, and exception alerts.</strong>
+                <strong>Structured intake, owner tracking, validation rules, reminders, summary views, and exception alerts.</strong>
               </div>
               <div class="case-point">
                 <span>Business impact</span>
-                <strong>Less repeated follow-up, faster visibility, and a clearer owner for each step.</strong>
+                <strong>Less repeated follow-up, faster visibility, cleaner accountability, and fewer reporting surprises.</strong>
               </div>
             </div>
           </article>
@@ -1020,10 +1102,16 @@
 
       <section class="cta" id="contact" aria-labelledby="contact-title">
         <div class="cta-inner">
-          <h2 id="contact-title">Ready to remove repetitive work from your business?</h2>
+          <h2 id="contact-title">Let us find the workflow your team should stop doing manually.</h2>
           <p>
-            Book a free discovery call and we will identify the highest-value workflow to automate first.
+            Book a free discovery call. In the first conversation, we will clarify the manual process, estimate the
+            business cost of keeping it manual, and decide whether automation is worth pursuing.
           </p>
+          <div class="cta-meta" aria-label="Discovery call details">
+            <span>Free first call</span>
+            <span>No technical prep needed</span>
+            <span>Bring one painful workflow</span>
+          </div>
           <a class="button button-primary"
             href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
             Book a Free Discovery Call
