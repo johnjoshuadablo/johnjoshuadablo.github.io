@@ -605,9 +605,9 @@
         <p class="eyebrow">Case study</p>
         <h1 id="case-title">AI Facebook Comment Automation</h1>
         <p class="hero-copy">
-          Customer inquiries were arriving through Facebook comments faster than staff could respond. I designed a
-          custom automation system that helped reduce repetitive response work, improve consistency, and create a more
-          reliable customer communication workflow.
+          Customer inquiries were arriving through Facebook comments faster than staff could respond. I designed an
+          image-aware, FAQ-backed automation workflow that could understand post context, protect against unsafe replies,
+          and respond in the brand voice while keeping human review available for exceptions.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -644,8 +644,8 @@
         </div>
         <p class="large-copy">
           The client was spending significant time on repetitive manual responses that slowed operations and created
-          inconsistencies. The solution turned incoming Facebook comments into a structured workflow for response,
-          escalation, and visibility.
+          inconsistencies. The solution turned incoming Facebook comments into a structured workflow for filtering,
+          context gathering, AI-assisted response, escalation, and visibility.
         </p>
       </div>
     </section>
@@ -659,7 +659,8 @@
           </div>
           <p class="section-lede">
             The issue was not just volume. Responses were inconsistent, follow-ups were missed, and staff were spending
-            valuable time answering the same questions instead of moving qualified customers forward.
+            valuable time answering the same questions instead of moving qualified customers forward. The team also
+            needed the system to understand the original post, not only the comment.
           </p>
         </div>
         <div class="card-grid">
@@ -674,6 +675,18 @@
           <article class="card">
             <h3>Missed follow-ups</h3>
             <p>Important comments could be buried during busy periods, especially when campaigns created sudden spikes.</p>
+          </article>
+          <article class="card">
+            <h3>Post context mattered</h3>
+            <p>Many customer questions depended on the product, promo, price, or image shown in the original post.</p>
+          </article>
+          <article class="card">
+            <h3>Multiple Facebook pages</h3>
+            <p>The workflow needed to handle comments across several pages without replying from the wrong account.</p>
+          </article>
+          <article class="card">
+            <h3>Unsafe replies had to be avoided</h3>
+            <p>Spam, complaints, deleted comments, page-owned comments, and reactions needed to be filtered out.</p>
           </article>
         </div>
       </div>
@@ -706,6 +719,18 @@
             <strong>Human dependency</strong>
             Staff still needed visibility into escalations, exceptions, and conversations that required judgment.
           </li>
+          <li>
+            <strong>Brand voice</strong>
+            Replies needed to sound natural, helpful, and on-brand in Taglish instead of robotic or generic.
+          </li>
+          <li>
+            <strong>Context from images</strong>
+            Product posts often contained pricing, specs, and promotional details inside the image itself.
+          </li>
+          <li>
+            <strong>Loop prevention</strong>
+            The system needed to ignore page-owned comments, reactions, edits, deletes, and excluded feeds.
+          </li>
         </ul>
       </div>
     </section>
@@ -714,15 +739,20 @@
       <div class="section-inner">
         <div class="solution-panel">
           <p class="section-kicker">Solution</p>
-          <h2 id="solution-title">An AI-powered workflow that responds, routes, and escalates.</h2>
+          <h2 id="solution-title">An AI-powered workflow that filters, understands, replies, and escalates.</h2>
           <p class="body-copy" style="margin-top: 22px;">
-            I designed a workflow that analyzes incoming Facebook comments, identifies the customer's intent, retrieves
-            relevant business information, generates context-aware replies, and escalates conversations that require a
-            human decision.
+            I designed a workflow that listens for Facebook comment events, ignores events that should not receive a
+            reply, selects the right page identity, retrieves the original post context, analyzes the post image when
+            needed, checks internal FAQ data, and generates a short brand-aligned response.
           </p>
           <p class="body-copy" style="margin-top: 18px;">
-            The important design choice was control: the system was not built to blindly answer everything. It was built
-            to reduce repetitive work while giving staff a clearer view of what needed attention.
+            The important design choice was control: the system was not built to blindly answer everything. It classifies
+            spam, bad comments, and customer complaints, then avoids or escalates cases where automation should not
+            respond.
+          </p>
+          <p class="body-copy" style="margin-top: 18px;">
+            To make replies feel natural, the workflow waits briefly before responding and uses conversational Taglish
+            brand guidelines rather than generic AI language.
           </p>
         </div>
       </div>
@@ -736,25 +766,25 @@
             <h2 id="architecture-title">Simple enough for business owners to understand.</h2>
           </div>
           <p class="section-lede">
-            The architecture connects the comment source, automation workflow, business rules, and human review layer.
-            No code is needed to understand the operating model.
+            The architecture connects Facebook webhooks, page routing, post context, image analysis, FAQ knowledge,
+            AI response generation, safety checks, and the final Facebook reply.
           </p>
         </div>
         <div class="solution-panel">
           <div class="architecture" aria-label="Facebook comment automation architecture">
-            <div class="arch-node">Facebook comments</div>
+            <div class="arch-node">Facebook comment webhook</div>
             <div class="arch-arrow">to</div>
-            <div class="arch-node">Webhook</div>
+            <div class="arch-node">Event filters</div>
             <div class="arch-arrow">to</div>
-            <div class="arch-node">AI analysis</div>
+            <div class="arch-node">Post and image context</div>
             <div class="arch-arrow">to</div>
-            <div class="arch-node">Business logic</div>
+            <div class="arch-node">FAQ knowledge</div>
             <div class="arch-arrow">to</div>
-            <div class="arch-node">Database</div>
+            <div class="arch-node">AI response</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Safety classifier</div>
             <div class="arch-arrow">to</div>
             <div class="arch-node">Reply or escalate</div>
-            <div class="arch-arrow">to</div>
-            <div class="arch-node">Dashboard</div>
           </div>
         </div>
       </div>
@@ -787,6 +817,15 @@
             <strong>Improved operational visibility</strong>
             The business could see which comments were handled, which needed attention, and where bottlenecks appeared.
           </li>
+          <li>
+            <strong>Better context awareness</strong>
+            Replies could use the original post content, image details, promo text, and FAQ data instead of only the
+            customer comment.
+          </li>
+          <li>
+            <strong>Safer automation</strong>
+            The workflow filtered page-owned comments, reactions, deleted comments, spam, and complaints before replying.
+          </li>
         </ul>
       </div>
     </section>
@@ -802,12 +841,14 @@
             The tools were selected around reliability, integration needs, and maintainability.
           </p>
           <div class="tech-list" aria-label="Technology list">
-            <span>OpenAI</span>
-            <span>Facebook Graph API</span>
-            <span>Node.js</span>
-            <span>AWS Lambda</span>
-            <span>PostgreSQL</span>
             <span>n8n</span>
+            <span>Facebook Webhooks</span>
+            <span>OpenAI</span>
+            <span>GPT-4.1 mini</span>
+            <span>GPT-4o image analysis</span>
+            <span>Facebook Graph API</span>
+            <span>n8n Data Tables</span>
+            <span>JavaScript</span>
           </div>
         </div>
       </div>
@@ -835,7 +876,7 @@
               </div>
               <div class="workflow-row">
                 <strong>After</strong>
-                <span>Automation classified comments, prepared responses, and surfaced exceptions.</span>
+                <span>Automation filtered events, gathered context, prepared replies, and surfaced exceptions.</span>
               </div>
             </div>
           </article>
@@ -851,8 +892,8 @@
                 <span>Complex cases</span>
               </div>
               <div class="workflow-row">
-                <strong>Insights</strong>
-                <span>Question themes</span>
+                <strong>Context</strong>
+                <span>Post, image, and FAQ data</span>
               </div>
             </div>
           </article>
@@ -867,8 +908,8 @@
           <h2 id="why-it-matters-title">Automation gave the team leverage without removing human judgment.</h2>
         </div>
         <p class="large-copy">
-          The solution transformed a repetitive manual process into a dependable system, allowing the team to focus on
-          higher-value customer conversations instead of repetitive operational tasks.
+          The solution transformed a repetitive manual response process into a dependable, brand-aware system, allowing
+          the team to focus on higher-value customer conversations instead of repeated operational tasks.
         </p>
       </div>
     </section>
