@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Case study: AI Facebook comment automation that reduced repetitive customer response work and improved operational visibility.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Facebook Comment Automation | Joshua Dablo Case Study">
+  <meta property="og:description"
+    content="How a repetitive manual customer response process was turned into a dependable AI-assisted workflow.">
+  <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-ai-facebook-comment-automation.html">
+  <meta property="og:site_name" content="Joshua Dablo">
+  <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
+  <title>AI Facebook Comment Automation | Joshua Dablo Case Study</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    :root {
+      --ink: #101318;
+      --muted: #5b6472;
+      --line: #e6e9ee;
+      --panel: #f7f8fa;
+      --panel-strong: #eef5f1;
+      --accent: #0f7a5b;
+      --accent-dark: #08533e;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(16, 19, 24, 0.08);
+      --max: 1120px;
+      --header-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 18px);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(230, 233, 238, 0.82);
+      background: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: var(--header-height);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--ink);
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: 0 12px 28px rgba(16, 19, 24, 0.16);
+    }
+
+    .button-secondary {
+      color: var(--ink);
+      background: var(--white);
+      border-color: var(--line);
+    }
+
+    .hero {
+      padding: calc(var(--header-height) + 82px) 0 64px;
+      background:
+        linear-gradient(180deg, rgba(247, 248, 250, 0.9), rgba(255, 255, 255, 0) 76%),
+        radial-gradient(circle at 82% 18%, rgba(15, 122, 91, 0.11), transparent 32%),
+        var(--white);
+    }
+
+    .hero-inner,
+    .section-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .breadcrumb:hover {
+      color: var(--ink);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 940px;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.58;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 56px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .client-item {
+      padding: 26px;
+      background: var(--white);
+    }
+
+    .client-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .client-item strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-muted {
+      background: var(--panel);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(320px, 0.7fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-lede,
+    .body-copy {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(320px, 0.78fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .large-copy {
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.18;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .challenge-list,
+    .result-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .challenge-list li,
+    .result-list li {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .challenge-list strong,
+    .result-list strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .solution-panel {
+      padding: clamp(34px, 6vw, 64px);
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .solution-panel .section-kicker,
+    .solution-panel p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .solution-panel h2 {
+      color: var(--white);
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns: minmax(110px, 1fr) 20px minmax(90px, 1fr) 20px minmax(100px, 1fr) 20px minmax(110px, 1fr) 20px minmax(90px, 1fr) 20px minmax(120px, 1fr) 20px minmax(90px, 1fr);
+      gap: 10px;
+      margin-top: 34px;
+      align-items: stretch;
+    }
+
+    .arch-node {
+      min-height: 96px;
+      display: grid;
+      place-items: center;
+      padding: 16px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      text-align: center;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .arch-arrow {
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-list span {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .gallery-card {
+      min-height: 260px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-card h3 {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .workflow-preview {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .workflow-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .workflow-row strong {
+      color: var(--ink);
+    }
+
+    .cta {
+      padding: 96px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .cta-inner {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1;
+    }
+
+    .cta p {
+      max-width: 660px;
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .cta .button-primary {
+      margin-top: 32px;
+      color: var(--ink);
+      background: var(--white);
+      box-shadow: none;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.58);
+      background: var(--ink);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 940px) {
+      :root {
+        --header-height: 76px;
+      }
+
+      .nav {
+        min-height: auto;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: calc(var(--header-height) + 64px);
+      }
+
+      .client-grid,
+      .section-heading,
+      .two-column,
+      .card-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture {
+        grid-template-columns: 1fr;
+      }
+
+      .arch-arrow {
+        display: grid;
+        min-height: 18px;
+      }
+
+      .arch-node {
+        min-height: 72px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav,
+      .hero-inner,
+      .section-inner,
+      .footer-inner,
+      .cta-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .client-item,
+      .card,
+      .gallery-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Joshua Dablo home">
+        <span class="brand-mark">JD</span>
+        <span>Joshua Dablo</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#results">Results</a>
+        <a href="#architecture">Architecture</a>
+      </div>
+      <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+        rel="noopener">
+        Book My Free Discovery Call
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="case-title">
+      <div class="hero-inner">
+        <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
+        <p class="eyebrow">Case study</p>
+        <h1 id="case-title">AI Facebook Comment Automation</h1>
+        <p class="hero-copy">
+          Customer inquiries were arriving through Facebook comments faster than staff could respond. I designed a
+          custom automation system that helped reduce repetitive response work, improve consistency, and create a more
+          reliable customer communication workflow.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}'
+            target="_blank" rel="noopener">
+            Book My Free Discovery Call
+          </a>
+          <a class="button button-secondary" href="#problem">Read the business problem</a>
+        </div>
+
+        <div class="client-grid" aria-label="Client details">
+          <div class="client-item">
+            <span>Industry</span>
+            <strong>Retail and ecommerce</strong>
+          </div>
+          <div class="client-item">
+            <span>Company size</span>
+            <strong>Growing SME</strong>
+          </div>
+          <div class="client-item">
+            <span>Department</span>
+            <strong>Sales and customer support</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-kicker">Overview</p>
+          <h2 id="overview-title">A repetitive customer response process became an AI-assisted workflow.</h2>
+        </div>
+        <p class="large-copy">
+          The client was spending significant time on repetitive manual responses that slowed operations and created
+          inconsistencies. The solution turned incoming Facebook comments into a structured workflow for response,
+          escalation, and visibility.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="problem" aria-labelledby="problem-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">The business problem</p>
+            <h2 id="problem-title">Comments were coming in faster than the team could handle them.</h2>
+          </div>
+          <p class="section-lede">
+            The issue was not just volume. Responses were inconsistent, follow-ups were missed, and staff were spending
+            valuable time answering the same questions instead of moving qualified customers forward.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Repetitive questions</h3>
+            <p>Customers repeatedly asked about products, availability, pricing, order next steps, and campaign details.</p>
+          </article>
+          <article class="card">
+            <h3>Inconsistent responses</h3>
+            <p>Different staff members answered similar questions differently, which created uneven customer experience.</p>
+          </article>
+          <article class="card">
+            <h3>Missed follow-ups</h3>
+            <p>Important comments could be buried during busy periods, especially when campaigns created sudden spikes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="challenges" aria-labelledby="challenges-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-kicker">Challenges</p>
+          <h2 id="challenges-title">The workflow needed automation without losing business control.</h2>
+        </div>
+        <ul class="challenge-list">
+          <li>
+            <strong>High comment volume</strong>
+            The system needed to handle spikes from campaigns without requiring staff to monitor every thread manually.
+          </li>
+          <li>
+            <strong>Multiple product categories</strong>
+            Replies needed to stay relevant across different products, offers, and customer intents.
+          </li>
+          <li>
+            <strong>Need for accurate responses</strong>
+            Automation had to avoid guessing when the question required human review.
+          </li>
+          <li>
+            <strong>Existing manual workflow</strong>
+            The system had to support how the team already worked instead of forcing a complete operational reset.
+          </li>
+          <li>
+            <strong>Human dependency</strong>
+            Staff still needed visibility into escalations, exceptions, and conversations that required judgment.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="solution" aria-labelledby="solution-title">
+      <div class="section-inner">
+        <div class="solution-panel">
+          <p class="section-kicker">Solution</p>
+          <h2 id="solution-title">An AI-powered workflow that responds, routes, and escalates.</h2>
+          <p class="body-copy" style="margin-top: 22px;">
+            I designed a workflow that analyzes incoming Facebook comments, identifies the customer's intent, retrieves
+            relevant business information, generates context-aware replies, and escalates conversations that require a
+            human decision.
+          </p>
+          <p class="body-copy" style="margin-top: 18px;">
+            The important design choice was control: the system was not built to blindly answer everything. It was built
+            to reduce repetitive work while giving staff a clearer view of what needed attention.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">System architecture</p>
+            <h2 id="architecture-title">Simple enough for business owners to understand.</h2>
+          </div>
+          <p class="section-lede">
+            The architecture connects the comment source, automation workflow, business rules, and human review layer.
+            No code is needed to understand the operating model.
+          </p>
+        </div>
+        <div class="solution-panel">
+          <div class="architecture" aria-label="Facebook comment automation architecture">
+            <div class="arch-node">Facebook comments</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Webhook</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">AI analysis</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Business logic</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Database</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Reply or escalate</div>
+            <div class="arch-arrow">to</div>
+            <div class="arch-node">Dashboard</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="results" aria-labelledby="results-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-kicker">Business results</p>
+          <h2 id="results-title">The team gained a more reliable response system.</h2>
+        </div>
+        <ul class="result-list">
+          <li>
+            <strong>Faster response times</strong>
+            Repetitive comments could be handled faster because the system prepared or delivered consistent responses.
+          </li>
+          <li>
+            <strong>Reduced manual workload</strong>
+            Staff spent less time repeating the same answers across common customer questions.
+          </li>
+          <li>
+            <strong>More consistent communication</strong>
+            Replies followed the same business logic instead of depending on who happened to respond.
+          </li>
+          <li>
+            <strong>Better customer experience</strong>
+            Customers received clearer responses while complex conversations could still move to human review.
+          </li>
+          <li>
+            <strong>Improved operational visibility</strong>
+            The business could see which comments were handled, which needed attention, and where bottlenecks appeared.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="technologies" aria-labelledby="technologies-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-kicker">Technologies</p>
+          <h2 id="technologies-title">Technology supported the workflow. It was not the headline.</h2>
+        </div>
+        <div>
+          <p class="body-copy" style="margin-bottom: 22px;">
+            The tools were selected around reliability, integration needs, and maintainability.
+          </p>
+          <div class="tech-list" aria-label="Technology list">
+            <span>OpenAI</span>
+            <span>Facebook Graph API</span>
+            <span>Node.js</span>
+            <span>AWS Lambda</span>
+            <span>PostgreSQL</span>
+            <span>n8n</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Gallery</p>
+            <h2 id="gallery-title">The useful visuals are workflow visuals.</h2>
+          </div>
+          <p class="section-lede">
+            For business stakeholders, the most valuable screenshots are not code screenshots. They are before and after
+            workflow views, dashboards, and simple architecture diagrams.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <h3>Before and after workflow</h3>
+            <div class="workflow-preview">
+              <div class="workflow-row">
+                <strong>Before</strong>
+                <span>Staff manually monitored comments, answered repeats, and chased follow-ups.</span>
+              </div>
+              <div class="workflow-row">
+                <strong>After</strong>
+                <span>Automation classified comments, prepared responses, and surfaced exceptions.</span>
+              </div>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <h3>Dashboard concept</h3>
+            <div class="workflow-preview">
+              <div class="workflow-row">
+                <strong>Handled</strong>
+                <span>Common questions</span>
+              </div>
+              <div class="workflow-row">
+                <strong>Needs review</strong>
+                <span>Complex cases</span>
+              </div>
+              <div class="workflow-row">
+                <strong>Insights</strong>
+                <span>Question themes</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-it-matters" aria-labelledby="why-it-matters-title">
+      <div class="section-inner two-column">
+        <div>
+          <p class="section-kicker">Why this matters</p>
+          <h2 id="why-it-matters-title">Automation gave the team leverage without removing human judgment.</h2>
+        </div>
+        <p class="large-copy">
+          The solution transformed a repetitive manual process into a dependable system, allowing the team to focus on
+          higher-value customer conversations instead of repetitive operational tasks.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact" aria-labelledby="contact-title">
+      <div class="cta-inner">
+        <h2 id="contact-title">Have a workflow that feels too manual?</h2>
+        <p>
+          Book a free discovery call. We will identify whether automation can reduce repetitive work, improve
+          visibility, and make the process easier for your team to run.
+        </p>
+        <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+          rel="noopener">
+          Book My Free Discovery Call
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Joshua Dablo. Custom automation systems for growing SMEs.</span>
+      <a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function (C, A, L) {
+      var p = function (a, ar) {
+        a.q.push(ar);
+      };
+      var d = C.document;
+      C.Cal = C.Cal || function () {
+        var cal = C.Cal;
+        var ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          var api = function () {
+            p(api, arguments);
+          };
+          var namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else {
+            p(cal, ar);
+          }
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "free-automation-discovery-call", {
+      origin: "https://app.cal.com"
+    });
+
+    Cal.ns["free-automation-discovery-call"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  </script>
+</body>
+
+</html>
