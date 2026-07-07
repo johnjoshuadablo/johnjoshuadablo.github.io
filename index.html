@@ -31,6 +31,7 @@
       --white: #ffffff;
       --shadow: 0 24px 80px rgba(16, 19, 24, 0.08);
       --max: 1160px;
+      --header-height: 72px;
     }
 
     * {
@@ -39,6 +40,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 18px);
     }
 
     body {
@@ -67,21 +69,25 @@
     }
 
     .page-shell {
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: visible;
     }
 
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 20;
+      right: 0;
+      left: 0;
+      z-index: 100;
       border-bottom: 1px solid rgba(230, 233, 238, 0.82);
       background: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: blur(18px);
       backdrop-filter: blur(18px);
     }
 
     .nav {
       width: min(var(--max), calc(100% - 40px));
-      min-height: 72px;
+      min-height: var(--header-height);
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -161,7 +167,7 @@
 
     .hero {
       position: relative;
-      padding: 92px 0 56px;
+      padding: calc(var(--header-height) + 92px) 0 56px;
       background:
         linear-gradient(180deg, rgba(247, 248, 250, 0.84), rgba(255, 255, 255, 0) 72%),
         radial-gradient(circle at 80% 18%, rgba(15, 122, 91, 0.10), transparent 32%),
@@ -656,6 +662,10 @@
     }
 
     @media (max-width: 900px) {
+      :root {
+        --header-height: 76px;
+      }
+
       .nav {
         min-height: auto;
         padding: 16px 0;
@@ -666,7 +676,7 @@
       }
 
       .hero {
-        padding-top: 68px;
+        padding-top: calc(var(--header-height) + 68px);
       }
 
       .hero-proof,
@@ -745,7 +755,10 @@
           <a href="#process">Process</a>
         </div>
         <a class="button button-primary"
-          href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+          href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-namespace="free-automation-discovery-call"
+          data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
           Book a Free Discovery Call
         </a>
       </nav>
@@ -762,7 +775,10 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary"
-              href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+              href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+              data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+              data-cal-namespace="free-automation-discovery-call"
+              data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
               Book a Free Discovery Call
             </a>
             <a class="button button-secondary" href="#case-study">See the approach</a>
@@ -775,7 +791,7 @@
             </div>
             <div class="proof-item">
               <p class="proof-label">Best fit</p>
-              <p class="proof-value">Growing SMEs with 10 to 200 employees</p>
+              <p class="proof-value">Growing SMEs with 10 to 200+ employees</p>
             </div>
             <div class="proof-item">
               <p class="proof-label">Primary outcome</p>
@@ -1093,8 +1109,8 @@
             </details>
             <details>
               <summary>How do we start?</summary>
-              <p>Send a short note with your company size, the workflow you want to improve, and a few available call
-                times. I will respond with next steps.</p>
+              <p>Book a discovery call and bring one workflow that feels too manual. We will clarify the process,
+                the business cost, and whether automation is worth pursuing.</p>
             </details>
           </div>
         </div>
@@ -1113,7 +1129,10 @@
             <span>Bring one painful workflow</span>
           </div>
           <a class="button button-primary"
-            href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+            href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call"
+            data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">
             Book a Free Discovery Call
           </a>
         </div>
@@ -1127,6 +1146,49 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function (C, A, L) {
+      var p = function (a, ar) {
+        a.q.push(ar);
+      };
+      var d = C.document;
+      C.Cal = C.Cal || function () {
+        var cal = C.Cal;
+        var ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          var api = function () {
+            p(api, arguments);
+          };
+          var namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else {
+            p(cal, ar);
+          }
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "free-automation-discovery-call", {
+      origin: "https://app.cal.com"
+    });
+
+    Cal.ns["free-automation-discovery-call"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  </script>
 </body>
 
 </html>
