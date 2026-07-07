@@ -258,6 +258,10 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+      margin-top: 14px;
+    }
+
+    .hero-credibility-label {
       margin-top: 58px;
     }
 
@@ -282,6 +286,52 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.55;
+    }
+
+    .fit-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(320px, 0.72fr);
+      gap: 56px;
+      align-items: start;
+      padding: clamp(34px, 6vw, 64px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 248, 250, 0.96)),
+        var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .fit-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fit-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .fit-list li::before {
+      content: "OK";
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--accent);
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1;
     }
 
     .section {
@@ -948,8 +998,20 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
     }
 
     @media (max-width: 900px) {
@@ -972,6 +1034,7 @@
 
       .hero-proof,
       .credibility-strip,
+      .fit-panel,
       .section-heading,
       .two-column,
       .pain-panel,
@@ -1074,8 +1137,8 @@
           <p class="eyebrow">Automation systems for growing SMEs</p>
           <h1 id="hero-title">Reduce Costs. Save Time. Automate Repetitive Work.</h1>
           <p class="hero-copy">
-            I help growing businesses reduce operational costs, save time, and eliminate repetitive work through custom
-            automation systems.
+            I help growing businesses eliminate repetitive work so they can reduce costs, save time, and scale without
+            adding unnecessary manual processes.
           </p>
           <div class="hero-actions">
             <a class="button button-primary"
@@ -1088,18 +1151,19 @@
             <a class="button button-secondary" href="#case-study">See the approach</a>
           </div>
 
-          <div class="credibility-strip" aria-label="Credibility">
+          <p class="section-kicker hero-credibility-label">Trusted experience</p>
+          <div class="credibility-strip" aria-label="Trusted experience">
             <div class="credibility-item">
-              <strong>7+ years building software and automation</strong>
-              <span>Practical experience turning business operations into maintainable systems.</span>
+              <strong>7+ Years Building Software & Automation</strong>
+              <span>Led technology initiatives as CIO while designing automation, internal systems, cloud infrastructure, and AI-powered workflows.</span>
             </div>
             <div class="credibility-item">
-              <strong>AI, ERP, inventory, reporting</strong>
-              <span>Experience across internal systems, automation, mobile apps, and cloud architecture.</span>
+              <strong>CIO & Technology Leadership</strong>
+              <span>Practical experience with real business operations, internal systems, reporting, inventory, and team workflows.</span>
             </div>
             <div class="credibility-item">
-              <strong>Business-first implementation</strong>
-              <span>Technology decisions start with cost, workflow, ownership, and team adoption.</span>
+              <strong>AI, AWS & Business Process Automation</strong>
+              <span>Technology decisions start with cost, workflow, ownership, maintainability, and team adoption.</span>
             </div>
           </div>
 
@@ -1115,6 +1179,31 @@
             <div class="proof-item">
               <p class="proof-label">Primary outcome</p>
               <p class="proof-value">Less manual work and cleaner operations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="is-this-for-you" aria-labelledby="is-this-for-you-title">
+        <div class="section-inner">
+          <div class="fit-panel">
+            <div>
+              <p class="section-kicker">Is this for you?</p>
+              <h2 id="is-this-for-you-title">If your team is still doing these by hand, there may be an automation opportunity.</h2>
+            </div>
+            <div>
+              <ul class="fit-list">
+                <li>Copies data between systems.</li>
+                <li>Updates spreadsheets every week.</li>
+                <li>Manually prepares reports.</li>
+                <li>Constantly follows up on approvals.</li>
+                <li>Repeatedly answers the same customer questions.</li>
+                <li>Spends hours doing repetitive admin work.</li>
+              </ul>
+              <p class="section-lede" style="margin-top: 24px;">
+                If several of these sound familiar, there is probably a workflow worth reviewing before you add more
+                manual process.
+              </p>
             </div>
           </div>
         </div>
@@ -1322,8 +1411,8 @@
                 </div>
               </div>
               <div class="hero-actions">
-                <a class="button button-primary" href="case-study-ai-facebook-comment-automation.html">Read the full case study</a>
-                <a class="button button-secondary" href="#other-case-studies">View more case studies</a>
+                <a class="button button-primary" href="case-study-ai-facebook-comment-automation.html">View solution</a>
+                <a class="button button-secondary" href="#other-case-studies">See more solutions</a>
               </div>
             </div>
             <div class="case-points">
@@ -1363,13 +1452,13 @@
                 <span class="study-number">01</span>
               </span>
               <span>
-                <h3>Facebook  Automated post for High-Viewed Products</h3>
+                <h3>Facebook Automated Post for High-Viewed Products</h3>
                 <p>Turn product-view activity into scheduled Facebook posts with AI captions, generated promo images,
                   and quality checks.</p>
               </span>
               <span class="study-card-bottom">
                 <span class="study-outcome">Demand-led publishing</span>
-                <span class="study-link">Read case study</span>
+                <span class="study-link">View solution</span>
               </span>
             </a>
             <a class="study-card" href="case-study-pc-build-gallery-ai-data-entry.html">
@@ -1378,13 +1467,13 @@
                 <span class="study-number">02</span>
               </span>
               <span>
-                <h3> Gallery AI Data Entry</h3>
+                <h3>PC Build Gallery AI Data Entry</h3>
                 <p>Use AI to improve build metadata, validate photos, generate setup visuals, and publish cleaner
                   gallery entries.</p>
               </span>
               <span class="study-card-bottom">
                 <span class="study-outcome">Gallery QA automation</span>
-                <span class="study-link">Read case study</span>
+                <span class="study-link">View solution</span>
               </span>
             </a>
             <a class="study-card" href="case-study-auto-website-blogs.html">
@@ -1399,7 +1488,7 @@
               </span>
               <span class="study-card-bottom">
                 <span class="study-outcome">SEO publishing pipeline</span>
-                <span class="study-link">Read case study</span>
+                <span class="study-link">View solution</span>
               </span>
             </a>
             <a class="study-card" href="case-study-auto-sms-sales-report.html">
@@ -1414,7 +1503,7 @@
               </span>
               <span class="study-card-bottom">
                 <span class="study-outcome">Executive visibility</span>
-                <span class="study-link">Read case study</span>
+                <span class="study-link">View solution</span>
               </span>
             </a>
             <a class="study-card" href="case-study-looker-studio-sales-etl.html">
@@ -1429,7 +1518,7 @@
               </span>
               <span class="study-card-bottom">
                 <span class="study-outcome">Reporting data pipeline</span>
-                <span class="study-link">Read case study</span>
+                <span class="study-link">View solution</span>
               </span>
             </a>
           </div>
@@ -1609,7 +1698,15 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <span>Joshua Dablo. Custom automation systems for growing SMEs.</span>
-        <a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="https://www.linkedin.com/in/johnjoshuadablo/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/johnjoshuadablo" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:joshuadablo.jd@gmail.com">Email</a>
+          <a href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call"
+            data-cal-config='{"layout":"month_view"}' target="_blank" rel="noopener">Book a Call</a>
+        </nav>
       </div>
     </footer>
   </div>
