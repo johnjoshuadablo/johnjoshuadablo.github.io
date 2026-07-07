@@ -33,6 +33,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 p,
 h1,
 h2,
@@ -393,6 +398,58 @@ h2 {
   gap: 18px;
 }
 
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.screenshot-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.screenshot-card-wide {
+  grid-column: 1 / -1;
+}
+
+.screenshot-frame {
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--line);
+  background: #20242a;
+}
+
+.screenshot-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-frame-contained {
+  min-height: 420px;
+  padding: 18px;
+  background: #f1f3f6;
+}
+
+.screenshot-frame-contained img {
+  width: auto;
+  max-height: 620px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.screenshot-copy {
+  padding: 24px 28px 28px;
+}
+
+.screenshot-copy p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
 .workflow-preview {
   display: grid;
   gap: 10px;
@@ -487,6 +544,7 @@ h2 {
   .two-column,
   .card-grid,
   .gallery-grid,
+  .screenshot-grid,
   .architecture {
     grid-template-columns: 1fr;
   }
@@ -521,5 +579,17 @@ h2 {
   .card,
   .gallery-card {
     padding: 22px;
+  }
+
+  .screenshot-card {
+    padding: 0;
+  }
+
+  .screenshot-copy {
+    padding: 22px;
+  }
+
+  .screenshot-frame-contained {
+    min-height: 0;
   }
 }

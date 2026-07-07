@@ -12,11 +12,11 @@ Use this checklist to collect sanitized screenshots and visuals for each case st
 
 ## Facebook Auto Post for High-Viewed Products
 
-- [ ] n8n workflow overview showing schedule, product selection, image generation, QA, and Facebook posting (`facebook-auto-post-high-viewed-products/n8n-workflow-overview.png`)
-- [ ] Product analytics/source signal screenshot: top viewed products or selected product, sanitized (`facebook-auto-post-high-viewed-products/product-analytics-source-signal.png`)
-- [ ] Generated promo image example (`facebook-auto-post-high-viewed-products/generated-promo-image.png`)
-- [ ] AI QA gate screenshot showing pass/fail or validation result (`facebook-auto-post-high-viewed-products/ai-qa-gate-result.png`)
-- [ ] Published Facebook post example with private data hidden (`facebook-auto-post-high-viewed-products/published-facebook-post.png`)
+- [x] n8n workflow overview showing schedule, product selection, image generation, QA, and Facebook posting (`facebook-auto-post-high-viewed-products/n8n-workflow-overview.png`)
+- [x] Product analytics/source signal screenshot: top viewed products or selected product, sanitized (`facebook-auto-post-high-viewed-products/product-analytics-source-signal.png`)
+- [x] Generated promo image example (`facebook-auto-post-high-viewed-products/generated-promo-image.png`)
+- [x] AI QA gate screenshot showing pass/fail or validation result (`facebook-auto-post-high-viewed-products/ai-qa-gate-result.png`)
+- [x] Published Facebook post example with private data hidden (`facebook-auto-post-high-viewed-products/published-facebook-post.png`)
 
 ## PC Build Gallery AI Data Entry
 
@@ -49,4 +49,3 @@ Use this checklist to collect sanitized screenshots and visuals for each case st
 - [ ] S3/output dataset screenshot showing generated reporting file/folder, no bucket/account details (`looker-studio-sales-etl/s3-output-dataset.png`)
 - [ ] Looker Studio dashboard screenshot with real layout but blurred/sanitized numbers (`looker-studio-sales-etl/looker-studio-dashboard.png`)
 - [ ] Before/after process diagram: manual export/table joins/dashboard refresh vs Glue ETL to dashboard (`looker-studio-sales-etl/before-after-process-diagram.png`)
-
