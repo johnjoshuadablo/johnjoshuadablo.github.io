@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Case study: Auto Website Blogs, an AI-assisted content workflow for tech news and SEO publishing.">
+    content="Case study: Automated Website Blogs, an AI-assisted RSS, topic filtering, HTML drafting, and SEO publishing workflow.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Auto Website Blogs | Joshua Dablo Case Study">
+  <meta property="og:title" content="Automated Website Blogs | Joshua Dablo Case Study">
   <meta property="og:description"
-    content="How tech news research and SEO content publishing became a structured AI-assisted workflow.">
-  <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-auto-Website-blogs.html">
+    content="How hardware news selection, SEO metadata, HTML drafting, and CMS publishing became a structured AI-assisted workflow.">
+  <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-auto-website-blogs.html">
   <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
-  <title>Auto Website Blogs | Joshua Dablo Case Study</title>
+  <title>Automated Website Blogs | Joshua Dablo Case Study</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="case-study.css">
 </head>
@@ -36,10 +36,11 @@
       <div class="hero-inner">
         <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
         <p class="eyebrow">Case study</p>
-        <h1>Auto Website Blogs</h1>
+        <h1>Automated Website Blogs</h1>
         <p class="hero-copy">
-          The client needed a more consistent way to publish relevant tech content for SEO. I built an AI-assisted
-          workflow that researches current technology news, drafts content, and prepares posts for review and publishing.
+          The client needed a more consistent way to publish relevant hardware content for SEO. I built an AI-assisted
+          workflow that reads hardware news feeds, filters out poor-fit topics, prepares blog metadata, generates
+          paraphrased HTML content, writes it into the CMS, and publishes after success checks.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -59,20 +60,23 @@
     <section class="section" id="overview">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Overview</p><h2>A slow content process became a repeatable SEO publishing workflow.</h2></div>
-        <p class="large-copy">The system helped the client turn relevant technology news into review-ready website content without manually researching and drafting every article from scratch.</p>
+        <p class="large-copy">The system helped the client turn relevant hardware news into website-ready content without manually researching, filtering, formatting, and uploading every article from scratch.</p>
       </div>
     </section>
 
     <section class="section section-muted" id="problem">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">The business problem</p><h2>Consistent SEO content required too much manual research and writing.</h2></div>
-          <p class="section-lede">Publishing useful content takes research, topic selection, writing, formatting, internal linking, and review. Without a system, the process becomes inconsistent.</p>
+          <div><p class="section-kicker">The business problem</p><h2>Consistent SEO content required too much manual research, filtering, and CMS work.</h2></div>
+          <p class="section-lede">Publishing useful content takes topic monitoring, relevance checks, metadata preparation, article formatting, CMS creation, content upload, and publish confirmation. Without a system, the process becomes inconsistent.</p>
         </div>
         <div class="card-grid">
           <article class="card"><h3>Manual research</h3><p>Staff had to monitor technology topics and decide what was worth writing about.</p></article>
           <article class="card"><h3>Inconsistent publishing</h3><p>Content output depended on available time instead of a reliable workflow.</p></article>
           <article class="card"><h3>SEO opportunity cost</h3><p>Relevant topics could be missed or published too late to support traffic growth.</p></article>
+          <article class="card"><h3>Low-value topic risk</h3><p>Deals, discounts, gaming-only stories, and clickbait topics could dilute the content strategy.</p></article>
+          <article class="card"><h3>Formatting overhead</h3><p>Each article needed clean HTML, source attribution, readable structure, and CMS-ready content.</p></article>
+          <article class="card"><h3>Publishing reliability</h3><p>The team needed confirmation that content was created, written successfully, and published in order.</p></article>
         </div>
       </div>
     </section>
@@ -85,6 +89,9 @@
           <li><strong>Brand relevance</strong>Not every tech news item was useful for the client's audience.</li>
           <li><strong>Human review</strong>AI could assist drafting, but the business still needed editorial control.</li>
           <li><strong>SEO formatting</strong>Posts needed structure, titles, excerpts, and publishing metadata.</li>
+          <li><strong>Topic filtering</strong>The workflow needed to reject discount-heavy, promotional, software-only, entertainment, and clickbait items.</li>
+          <li><strong>Originality and attribution</strong>Generated articles needed to be paraphrased and attribute the source instead of copying publisher text.</li>
+          <li><strong>CMS sequencing</strong>The workflow had to create the blog record, write the article body, check success, wait, and publish in the correct order.</li>
         </ul>
       </div>
     </section>
@@ -93,9 +100,10 @@
       <div class="section-inner">
         <div class="solution-panel">
           <p class="section-kicker">Solution</p>
-          <h2>An AI-assisted content pipeline for research, drafting, and publishing.</h2>
-          <p class="body-copy" style="margin-top: 22px;">The workflow identifies relevant tech topics, prepares a draft in the client's content style, formats the article for the website, and routes it for review before publishing.</p>
-          <p class="body-copy" style="margin-top: 18px;">The system was designed to support SEO operations without removing editorial judgment or copying full articles from other publishers.</p>
+          <h2>An AI-assisted RSS-to-CMS publishing pipeline with relevance checks.</h2>
+          <p class="body-copy" style="margin-top: 22px;">The workflow runs on a schedule, reads a hardware news RSS feed, randomly selects an article, and uses AI to decide whether the topic is genuinely useful for a PC hardware audience.</p>
+          <p class="body-copy" style="margin-top: 18px;">If the topic passes, the system prepares a clean blog payload with a paraphrased title, short intro, author, content type, category, year, and thumbnail. It then creates the blog record in the CMS.</p>
+          <p class="body-copy" style="margin-top: 18px;">A second AI step generates a structured, paraphrased HTML article with source attribution, short factual sections, relevant images when available, and no CSS or markdown. The workflow writes the content, verifies the update, waits, then publishes.</p>
         </div>
       </div>
     </section>
@@ -103,12 +111,12 @@
     <section class="section" id="architecture">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">System architecture</p><h2>From topic discovery to website-ready content.</h2></div>
-          <p class="section-lede">The architecture connects topic discovery, AI drafting, SEO formatting, human review, and website publishing.</p>
+          <div><p class="section-kicker">System architecture</p><h2>From hardware news feed to published website content.</h2></div>
+          <p class="section-lede">The architecture connects scheduled RSS reading, relevance filtering, metadata generation, HTML drafting, CMS writing, success checks, and publishing.</p>
         </div>
         <div class="solution-panel">
           <div class="architecture">
-            <div class="arch-node">Tech topics</div><div class="arch-node">Relevance filter</div><div class="arch-node">AI draft</div><div class="arch-node">SEO formatting</div><div class="arch-node">Review queue</div><div class="arch-node">Website post</div><div class="arch-node">Content log</div>
+            <div class="arch-node">Scheduled trigger</div><div class="arch-node">RSS feed</div><div class="arch-node">Topic filter</div><div class="arch-node">Blog metadata</div><div class="arch-node">HTML article</div><div class="arch-node">CMS write check</div><div class="arch-node">Publish post</div>
           </div>
         </div>
       </div>
@@ -122,6 +130,8 @@
           <li><strong>More consistent publishing</strong>The team had a repeatable workflow for SEO content creation.</li>
           <li><strong>Better topic visibility</strong>Relevant technology topics could be reviewed in one place.</li>
           <li><strong>Editorial control preserved</strong>Human review remained part of the workflow before publishing.</li>
+          <li><strong>Cleaner topic selection</strong>The workflow filtered out promotional, discount-led, or poor-fit articles before creating posts.</li>
+          <li><strong>More reliable publishing</strong>Content creation, body writing, success checking, and publishing followed a predictable sequence.</li>
         </ul>
       </div>
     </section>
@@ -129,7 +139,7 @@
     <section class="section" id="technologies">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Technologies</p><h2>The tools supported content operations.</h2></div>
-        <div class="tech-list"><span>OpenAI</span><span>RSS or news sources</span><span>CMS integration</span><span>Node.js</span><span>CRON</span><span>Database</span></div>
+        <div class="tech-list"><span>n8n</span><span>OpenAI</span><span>GPT-5 mini</span><span>RSS feed</span><span>AI agent</span><span>CMS API</span><span>Scheduled trigger</span><span>JavaScript</span></div>
       </div>
     </section>
 
@@ -137,11 +147,12 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">Gallery</p><h2>The workflow shows the business value.</h2></div>
-          <p class="section-lede">Useful visuals include topic queue, draft review, and publishing status.</p>
+          <p class="section-lede">Useful visuals include RSS selection, topic validation, metadata creation, HTML drafting, and publishing status.</p>
         </div>
         <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual research, writing, formatting, and upload.</span></div><div class="workflow-row"><strong>After</strong><span>AI prepares review-ready posts from relevant topics.</span></div></div></article>
-          <article class="gallery-card"><h3>Content queue</h3><div class="workflow-preview"><div class="workflow-row"><strong>Topic</strong><span>Selected</span></div><div class="workflow-row"><strong>Draft</strong><span>Ready for review</span></div><div class="workflow-row"><strong>Publish</strong><span>Website post</span></div></div></article>
+          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual research, filtering, writing, formatting, upload, and publishing.</span></div><div class="workflow-row"><strong>After</strong><span>RSS topics are filtered, drafted into HTML, written to the CMS, and published.</span></div></div></article>
+          <article class="gallery-card"><h3>Content queue</h3><div class="workflow-preview"><div class="workflow-row"><strong>Topic</strong><span>Hardware-relevant RSS item selected</span></div><div class="workflow-row"><strong>Payload</strong><span>Title, intro, author, category, year, and thumbnail prepared</span></div><div class="workflow-row"><strong>Publish</strong><span>CMS write succeeds before publishing</span></div></div></article>
+          <article class="gallery-card"><h3>Quality rules</h3><div class="workflow-preview"><div class="workflow-row"><strong>Allow</strong><span>Hardware releases, benchmarks, component updates, and technical insights</span></div><div class="workflow-row"><strong>Reject</strong><span>Deals, discounts, clickbait, software-only, and poor-fit stories</span></div><div class="workflow-row"><strong>Protect</strong><span>Paraphrase content and attribute the original source</span></div></div></article>
         </div>
       </div>
     </section>
@@ -149,7 +160,7 @@
     <section class="section" id="why-it-matters">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Why this matters</p><h2>SEO only works when publishing becomes operationally repeatable.</h2></div>
-        <p class="large-copy">The workflow helped the client publish more consistently while keeping human review and brand control in the process.</p>
+        <p class="large-copy">The workflow helped the client turn SEO publishing into an operational system: source topics consistently, reject poor-fit articles, prepare clean content, and publish through a controlled CMS process.</p>
       </div>
     </section>
 
