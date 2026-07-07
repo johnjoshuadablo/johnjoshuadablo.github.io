@@ -13,7 +13,8 @@
     content="How a repetitive manual customer response process was turned into a dependable AI-assisted workflow.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-ai-facebook-comment-automation.html">
   <meta property="og:site_name" content="Joshua Dablo">
-  <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
+  <meta property="og:image"
+    content="https://johnjoshuadablo.github.io/images/case-studies/ai-facebook-comment-automation/before-after-process-diagram.png">
   <title>AI Facebook Comment Automation | Joshua Dablo Case Study</title>
   <link rel="shortcut icon" href="favicon.ico">
   <style>
@@ -51,6 +52,11 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     p,
@@ -421,6 +427,12 @@
       gap: 18px;
     }
 
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
     .gallery-card {
       min-height: 260px;
       padding: 28px;
@@ -433,6 +445,36 @@
     .gallery-card h3 {
       font-size: 22px;
       line-height: 1.2;
+    }
+
+    .screenshot-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .screenshot-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    .screenshot-frame {
+      border-bottom: 1px solid var(--line);
+      background: #20242a;
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    .screenshot-copy {
+      padding: 24px 28px 28px;
+    }
+
+    .screenshot-copy p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
     }
 
     .workflow-preview {
@@ -528,7 +570,8 @@
       .section-heading,
       .two-column,
       .card-grid,
-      .gallery-grid {
+      .gallery-grid,
+      .screenshot-grid {
         grid-template-columns: 1fr;
       }
 
@@ -859,14 +902,66 @@
         <div class="section-heading">
           <div>
             <p class="section-kicker">Gallery</p>
-            <h2 id="gallery-title">The useful visuals are workflow visuals.</h2>
+            <h2 id="gallery-title">Real workflow proof, with private details sanitized.</h2>
           </div>
           <p class="section-lede">
-            For business stakeholders, the most valuable screenshots are not code screenshots. They are before and after
-            workflow views, dashboards, and simple architecture diagrams.
+            These screenshots show the working automation: the n8n flow, Facebook reply behavior, FAQ grounding,
+            safety logic, and the before/after process change.
           </p>
         </div>
-        <div class="gallery-grid">
+        <div class="screenshot-grid">
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/ai-facebook-comment-automation/n8n-workflow-overview.png"
+                alt="n8n workflow overview for AI Facebook comment automation" loading="lazy">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Full automation workflow</h3>
+              <p>The workflow listens for comment events, filters unsafe cases, gathers post and image context, checks FAQ data, prepares the reply, and routes exceptions.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/ai-facebook-comment-automation/before-after-process-diagram.png"
+                alt="Before and after process diagram for Facebook comment automation" loading="lazy">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Before and after process</h3>
+              <p>The process moved from manual comment monitoring and missed replies to a filtered AI-assisted response workflow.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/ai-facebook-comment-automation/facebook-comment-reply-example.png"
+                alt="Sanitized Facebook comment and automated reply example" loading="lazy">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Sanitized reply example</h3>
+              <p>Replies stay conversational and brand-aligned while preserving a human review path for exceptions.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/ai-facebook-comment-automation/safety-escalation-logic.png"
+                alt="n8n safety and escalation branch for AI Facebook comment automation" loading="lazy">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Safety and escalation logic</h3>
+              <p>The system checks whether a comment is worth replying to, avoids unsafe cases, waits briefly, then sends the response or routes the exception.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/ai-facebook-comment-automation/faq-data-source.png"
+                alt="FAQ data source used to ground AI Facebook comment replies" loading="lazy">
+            </div>
+            <div class="screenshot-copy">
+              <h3>FAQ knowledge source</h3>
+              <p>The automation uses structured FAQ data so common questions can be answered from approved business context instead of unsupported guesses.</p>
+            </div>
+          </article>
+        </div>
+        <div class="gallery-grid" style="margin-top: 18px;">
           <article class="gallery-card">
             <h3>Before and after workflow</h3>
             <div class="workflow-preview">

@@ -771,6 +771,28 @@
       line-height: 1.45;
     }
 
+    .case-proof-image {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #20242a;
+      box-shadow: 0 18px 60px rgba(16, 19, 24, 0.08);
+    }
+
+    .case-proof-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .case-proof-caption {
+      padding: 14px 16px;
+      color: var(--muted);
+      background: var(--white);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
     .case-points {
       display: grid;
       gap: 18px;
@@ -1396,6 +1418,14 @@
                 <li>Improved response consistency across common questions.</li>
                 <li>Created visibility into handled comments, exceptions, and follow-ups.</li>
               </ul>
+              <div class="case-proof-image">
+                <img src="images/case-studies/ai-facebook-comment-automation/before-after-process-diagram.png"
+                  alt="Before and after Facebook comment automation process" loading="lazy">
+                <div class="case-proof-caption">
+                  Real before/after process visual showing manual comment monitoring becoming a filtered AI-assisted
+                  response workflow.
+                </div>
+              </div>
               <div class="case-outcomes" aria-label="Featured case study outcomes">
                 <div class="case-outcome">
                   <strong>Less repetitive work</strong>
