@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Case study: automated sales data ETL and CRON job for Google Looker Studio reporting.">
+    content="Case study: automated AWS Glue sales data ETL for Google Looker Studio reporting.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Looker Studio Sales ETL Automation | Joshua Dablo Case Study">
   <meta property="og:description"
-    content="How sales transaction data was automated into a reporting-ready pipeline for Google Looker Studio.">
+    content="How sales transaction, product, branch, and ecommerce order data became a reporting-ready pipeline for Google Looker Studio.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-looker-studio-sales-etl.html">
   <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
@@ -38,8 +38,9 @@
         <p class="eyebrow">Case study</p>
         <h1>Looker Studio Sales ETL Automation</h1>
         <p class="hero-copy">
-          The client needed sales and transaction data to appear reliably in Google Looker Studio. I created an ETL
-          process and scheduled CRON job that loads reporting-ready data without repeated manual exports.
+          The client needed sales and transaction data to appear reliably in Google Looker Studio. I built an AWS Glue
+          ETL job that joins transaction, product, branch, category, manufacturer, and ecommerce order data, then loads
+          a reporting-ready dataset without repeated manual exports.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -59,20 +60,23 @@
     <section class="section" id="overview">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Overview</p><h2>Sales data became reliable enough for recurring business reporting.</h2></div>
-        <p class="large-copy">The solution automated the movement of sales and transaction data into a structure that Looker Studio could use for dashboards and performance visibility.</p>
+        <p class="large-copy">The solution automated the movement of raw operational data into a clean reporting structure that Looker Studio could use for dashboards and performance visibility.</p>
       </div>
     </section>
 
     <section class="section section-muted" id="problem">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">The business problem</p><h2>Reporting depended on manual data extraction and cleanup.</h2></div>
-          <p class="section-lede">When sales data needs to be exported, cleaned, and loaded manually, reports are delayed and decision-makers lose confidence in the dashboard.</p>
+          <div><p class="section-kicker">The business problem</p><h2>Reporting depended on manual data extraction, joins, and cleanup.</h2></div>
+          <p class="section-lede">Sales reporting needed more than one table. Transaction records had to be connected with product, branch, category, manufacturer, pricing, and ecommerce order details before the data became useful for dashboards.</p>
         </div>
         <div class="card-grid">
           <article class="card"><h3>Manual exports</h3><p>Sales or transaction data had to be pulled repeatedly before reporting.</p></article>
           <article class="card"><h3>Inconsistent data shape</h3><p>Raw transaction data was not always ready for clean dashboard reporting.</p></article>
           <article class="card"><h3>Delayed dashboards</h3><p>Looker Studio visibility depended on whether the latest data had been prepared.</p></article>
+          <article class="card"><h3>Multiple source tables</h3><p>Transactions needed context from products, listings, branches, categories, manufacturers, and ecommerce orders.</p></article>
+          <article class="card"><h3>Deleted record filtering</h3><p>Reports needed to exclude deleted transactions so dashboard numbers stayed cleaner.</p></article>
+          <article class="card"><h3>Reporting storage</h3><p>The final dataset needed to be written in a stable format that could support recurring dashboard refreshes.</p></article>
         </div>
       </div>
     </section>
@@ -85,6 +89,9 @@
           <li><strong>Scheduling</strong>Data needed to load automatically on a recurring cadence.</li>
           <li><strong>Transformation logic</strong>Raw data needed cleaning and reshaping before visualization.</li>
           <li><strong>Dashboard usability</strong>The final data structure needed to support useful Looker Studio reports.</li>
+          <li><strong>Cross-table joins</strong>The pipeline needed to combine transactions with product, branch, category, manufacturer, listing, and ecommerce order context.</li>
+          <li><strong>Data quality check</strong>The output needed a basic validation step before writing reporting data.</li>
+          <li><strong>Operational reliability</strong>The job needed metrics, observability, and controlled concurrency so reporting jobs did not overlap unexpectedly.</li>
         </ul>
       </div>
     </section>
@@ -93,9 +100,10 @@
       <div class="section-inner">
         <div class="solution-panel">
           <p class="section-kicker">Solution</p>
-          <h2>An automated ETL and CRON workflow for sales reporting.</h2>
-          <p class="body-copy" style="margin-top: 22px;">I created a process that extracts sales or transaction data, transforms it into a reporting-ready structure, loads it into the reporting destination, and runs automatically on schedule.</p>
-          <p class="body-copy" style="margin-top: 18px;">The outcome was a cleaner pipeline between business transactions and leadership reporting.</p>
+          <h2>An AWS Glue ETL workflow for sales reporting.</h2>
+          <p class="body-copy" style="margin-top: 22px;">I created an AWS Glue ETL job that reads operational data from the data catalog, joins the relevant business tables, filters out deleted transactions, and produces a single reporting dataset for sales visibility.</p>
+          <p class="body-copy" style="margin-top: 18px;">The transformed dataset includes transaction identifiers, branch details, product names, category and manufacturer context, listing status, pricing fields, ecommerce delivery fields, and the date the transaction was encoded.</p>
+          <p class="body-copy" style="margin-top: 18px;">The job writes a compressed Parquet output to reporting storage, with a basic data quality check and Glue observability enabled so the pipeline is easier to monitor and maintain.</p>
         </div>
       </div>
     </section>
@@ -103,12 +111,12 @@
     <section class="section" id="architecture">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">System architecture</p><h2>From transaction data to Looker Studio dashboard.</h2></div>
-          <p class="section-lede">The architecture connects source data, scheduled extraction, transformations, storage, and Looker Studio.</p>
+          <div><p class="section-kicker">System architecture</p><h2>From operational tables to Looker Studio dashboards.</h2></div>
+          <p class="section-lede">The architecture connects cataloged source tables, SQL transformation, data quality checks, reporting storage, and Looker Studio consumption.</p>
         </div>
         <div class="solution-panel">
           <div class="architecture">
-            <div class="arch-node">Sales source</div><div class="arch-node">CRON job</div><div class="arch-node">Extract</div><div class="arch-node">Transform</div><div class="arch-node">Load</div><div class="arch-node">Looker Studio</div><div class="arch-node">Dashboard</div>
+            <div class="arch-node">Source tables</div><div class="arch-node">AWS Glue job</div><div class="arch-node">SQL joins</div><div class="arch-node">Data quality check</div><div class="arch-node">Parquet output</div><div class="arch-node">Looker Studio</div><div class="arch-node">Dashboard</div>
           </div>
         </div>
       </div>
@@ -121,7 +129,9 @@
           <li><strong>Reduced manual exports</strong>Recurring data movement no longer depended on repeated staff action.</li>
           <li><strong>Cleaner dashboards</strong>Looker Studio received data in a more usable reporting format.</li>
           <li><strong>Improved visibility</strong>Decision-makers could review sales activity through a dedicated reporting layer.</li>
-          <li><strong>Better reporting cadence</strong>The CRON workflow created a more dependable update rhythm.</li>
+          <li><strong>Better reporting cadence</strong>The managed ETL workflow created a more dependable update rhythm.</li>
+          <li><strong>Richer sales context</strong>Transactions were enriched with branch, product, category, manufacturer, price, and ecommerce order details.</li>
+          <li><strong>More maintainable pipeline</strong>A managed AWS Glue job gave the reporting flow clearer monitoring and operational boundaries.</li>
         </ul>
       </div>
     </section>
@@ -129,7 +139,7 @@
     <section class="section" id="technologies">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Technologies</p><h2>The stack supported reliable reporting operations.</h2></div>
-        <div class="tech-list"><span>ETL</span><span>CRON</span><span>Google Looker Studio</span><span>Database</span><span>Node.js</span><span>Sales data</span></div>
+        <div class="tech-list"><span>AWS Glue</span><span>Python</span><span>SQL</span><span>Data Catalog</span><span>Parquet</span><span>S3</span><span>Google Looker Studio</span><span>Data quality checks</span></div>
       </div>
     </section>
 
@@ -137,11 +147,12 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">Gallery</p><h2>Reporting workflows should show data movement clearly.</h2></div>
-          <p class="section-lede">Useful visuals include data flow, transformation rules, load status, and dashboard output.</p>
+          <p class="section-lede">Useful visuals include source tables, SQL joins, data quality checks, output storage, and dashboard refresh flow.</p>
         </div>
         <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual export, cleanup, and dashboard refresh.</span></div><div class="workflow-row"><strong>After</strong><span>Scheduled ETL loads reporting-ready data.</span></div></div></article>
-          <article class="gallery-card"><h3>Pipeline status</h3><div class="workflow-preview"><div class="workflow-row"><strong>Extract</strong><span>Sales data</span></div><div class="workflow-row"><strong>Transform</strong><span>Reporting format</span></div><div class="workflow-row"><strong>Load</strong><span>Looker Studio</span></div></div></article>
+          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual export, table joins, cleanup, and dashboard refresh.</span></div><div class="workflow-row"><strong>After</strong><span>A managed Glue job prepares reporting-ready sales data.</span></div></div></article>
+          <article class="gallery-card"><h3>Pipeline status</h3><div class="workflow-preview"><div class="workflow-row"><strong>Extract</strong><span>Transactions, listings, products, branches, categories, manufacturers, and orders</span></div><div class="workflow-row"><strong>Transform</strong><span>SQL joins and deleted-transaction filtering</span></div><div class="workflow-row"><strong>Load</strong><span>Compressed reporting dataset for dashboards</span></div></div></article>
+          <article class="gallery-card"><h3>Reporting fields</h3><div class="workflow-preview"><div class="workflow-row"><strong>Business context</strong><span>Branch, product, category, manufacturer</span></div><div class="workflow-row"><strong>Commercial data</strong><span>Retail price, dealer price, listing status</span></div><div class="workflow-row"><strong>Ecommerce context</strong><span>Province, delivery option, delivery address</span></div></div></article>
         </div>
       </div>
     </section>
@@ -149,7 +160,7 @@
     <section class="section" id="why-it-matters">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Why this matters</p><h2>Dashboards only create value when the data behind them is dependable.</h2></div>
-        <p class="large-copy">The solution turned repeated reporting preparation into a scheduled data pipeline that made sales visibility easier to maintain.</p>
+        <p class="large-copy">The solution turned repeated reporting preparation into a managed data pipeline that made sales visibility easier to maintain and more useful for dashboard decisions.</p>
       </div>
     </section>
 
