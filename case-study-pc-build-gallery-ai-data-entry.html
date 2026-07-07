@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Case study: AI-assisted PC Build Gallery data entry and image enhancement automation.">
+    content="Case study: AI-assisted  Gallery data entry, image validation, generated setup images, and publishing QA automation.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="PC Build Gallery AI Data Entry | Joshua Dablo Case Study">
+  <meta property="og:title" content=" Gallery AI Data Entry | Joshua Dablo Case Study">
   <meta property="og:description"
-    content="How PC build uploads were turned into cleaner gallery entries with AI-assisted data entry and image enhancement.">
+    content="How uploads were turned into cleaner gallery entries with AI-assisted metadata, image validation, generated setup images, and publishing QA.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-pc-build-gallery-ai-data-entry.html">
   <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
-  <title>PC Build Gallery AI Data Entry | Joshua Dablo Case Study</title>
+  <title> Gallery AI Data Entry | Joshua Dablo Case Study</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="case-study.css">
 </head>
@@ -36,10 +36,11 @@
       <div class="hero-inner">
         <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
         <p class="eyebrow">Case study</p>
-        <h1>PC Build Gallery AI Data Entry</h1>
+        <h1> Gallery AI Data Entry</h1>
         <p class="hero-copy">
-          PC build content needed to be added to a gallery quickly and consistently. I built an AI-assisted workflow
-          that reduces manual data entry while improving the quality and presentation of uploaded build images.
+           content needed to be cleaned, checked, and published quickly without sacrificing quality. I built an
+          AI-assisted workflow that improves gallery metadata, validates photos, removes invalid images, generates
+          polished setup visuals, and prepares entries for publishing.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -58,21 +59,24 @@
 
     <section class="section" id="overview">
       <div class="section-inner two-column">
-        <div><p class="section-kicker">Overview</p><h2>Manual gallery publishing became a guided AI workflow.</h2></div>
-        <p class="large-copy">The client needed a faster way to prepare PC build gallery entries without sacrificing accuracy, visual quality, or consistency.</p>
+        <div><p class="section-kicker">Overview</p><h2>Manual gallery publishing became a quality-controlled content workflow.</h2></div>
+        <p class="large-copy">The client needed a faster way to prepare  gallery entries while protecting accuracy, brand safety, image quality, and consistency.</p>
       </div>
     </section>
 
     <section class="section section-muted" id="problem">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">The business problem</p><h2>Each PC build required repeated manual cleanup before publishing.</h2></div>
-          <p class="section-lede">Staff had to identify parts, enter build details, prepare images, format content, and keep the gallery consistent across many submissions.</p>
+          <div><p class="section-kicker">The business problem</p><h2>Each  required repeated cleanup, checking, and publishing work.</h2></div>
+          <p class="section-lede">Staff had to clean up titles, descriptions, build tiers, tags, keywords, uploaded photos, and publishing details before each gallery entry could go live.</p>
         </div>
         <div class="card-grid">
           <article class="card"><h3>Manual data entry</h3><p>Build specs had to be typed or cleaned up repeatedly before publishing.</p></article>
           <article class="card"><h3>Inconsistent entries</h3><p>Gallery quality depended on who prepared the content and how much time they had.</p></article>
           <article class="card"><h3>Image preparation</h3><p>Photos often needed enhancement or cleanup before they were ready to represent the build.</p></article>
+          <article class="card"><h3>Unsafe content risk</h3><p>Human-written fields needed to stay appropriate for a public retail website.</p></article>
+          <article class="card"><h3>Invalid photo uploads</h3><p>Some uploaded images could be unrelated, unclear, or not useful for a  gallery.</p></article>
+          <article class="card"><h3>Publishing friction</h3><p>Final gallery updates, photo uploads, and publishing steps created repeated admin work.</p></article>
         </div>
       </div>
     </section>
@@ -85,6 +89,9 @@
           <li><strong>Accuracy matters</strong>Incorrect parts or specs would damage customer trust.</li>
           <li><strong>Visual presentation</strong>The gallery needed images that made completed builds look polished.</li>
           <li><strong>Repeatable publishing</strong>The workflow needed a consistent structure for every build entry.</li>
+          <li><strong>Public content safety</strong>Titles, quotes, descriptions, and tags needed to avoid inappropriate wording.</li>
+          <li><strong>Photo validation</strong>The system needed to detect whether uploaded images actually showed a PC, setup, laptop, or relevant build photo.</li>
+          <li><strong>Generated image control</strong>AI setup images needed to preserve the real PC as the hero subject and be clearly watermarked.</li>
         </ul>
       </div>
     </section>
@@ -93,9 +100,10 @@
       <div class="section-inner">
         <div class="solution-panel">
           <p class="section-kicker">Solution</p>
-          <h2>An AI-assisted data entry and image enhancement workflow.</h2>
-          <p class="body-copy" style="margin-top: 22px;">The system helps extract or structure PC build information, prepare gallery-ready content, enhance uploaded images, and surface entries for review before publishing.</p>
-          <p class="body-copy" style="margin-top: 18px;">The workflow keeps a human review step where accuracy matters while removing the repetitive formatting and cleanup work.</p>
+          <h2>An AI-assisted gallery QA and publishing workflow.</h2>
+          <p class="body-copy" style="margin-top: 22px;">The workflow receives a gallery request, checks that the payload is valid, retrieves the build details, improves the title, build tier, quote, description, tags, and searchable keywords using only the source data, then validates the written content for safety.</p>
+          <p class="body-copy" style="margin-top: 18px;">Uploaded photos are reviewed by AI to confirm they show a relevant PC build, computer setup, laptop, or assembled parts. Invalid photos can be separated and deleted before the gallery is finalized.</p>
+          <p class="body-copy" style="margin-top: 18px;">For stronger presentation, the system can pick the best build photo, generate polished setup-style visuals around the real PC, add an AI-generated watermark, upload the assets, and publish the gallery entry through the internal system.</p>
         </div>
       </div>
     </section>
@@ -104,11 +112,11 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">System architecture</p><h2>From raw build content to gallery-ready entries.</h2></div>
-          <p class="section-lede">The workflow connects upload, AI-assisted extraction, image enhancement, review, and publishing.</p>
+          <p class="section-lede">The workflow connects gallery intake, metadata improvement, written-content QA, photo validation, AI setup generation, asset upload, and publishing.</p>
         </div>
         <div class="solution-panel">
           <div class="architecture">
-            <div class="arch-node">Build upload</div><div class="arch-node">AI extraction</div><div class="arch-node">Image enhancement</div><div class="arch-node">Validation</div><div class="arch-node">Review</div><div class="arch-node">Gallery entry</div><div class="arch-node">Dashboard</div>
+            <div class="arch-node">Gallery webhook</div><div class="arch-node">Build details</div><div class="arch-node">AI metadata</div><div class="arch-node">Safety QA</div><div class="arch-node">Photo validation</div><div class="arch-node">AI setup image</div><div class="arch-node">Publish gallery</div>
           </div>
         </div>
       </div>
@@ -122,6 +130,8 @@
           <li><strong>More consistent entries</strong>Gallery pages followed a clearer structure and presentation standard.</li>
           <li><strong>Better visual quality</strong>Image enhancement helped builds look more polished before publishing.</li>
           <li><strong>Faster review process</strong>Human attention shifted toward checking exceptions and accuracy.</li>
+          <li><strong>Cleaner public gallery</strong>Invalid or unrelated images could be filtered before publishing.</li>
+          <li><strong>Safer public content</strong>Generated titles, quotes, descriptions, and tags were checked before update.</li>
         </ul>
       </div>
     </section>
@@ -129,7 +139,7 @@
     <section class="section" id="technologies">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Technologies</p><h2>AI supported content operations.</h2></div>
-        <div class="tech-list"><span>OpenAI</span><span>Image processing</span><span>Node.js</span><span>Database</span><span>Admin dashboard</span><span>Cloud storage</span></div>
+        <div class="tech-list"><span>n8n</span><span>OpenAI</span><span>AI image generation</span><span>Image validation</span><span>Cloudinary</span><span>Internal API</span><span>Webhook</span><span>JavaScript</span></div>
       </div>
     </section>
 
@@ -137,11 +147,12 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">Gallery</p><h2>The workflow is the asset.</h2></div>
-          <p class="section-lede">Useful visuals include upload review, before and after image states, and gallery publishing status.</p>
+          <p class="section-lede">Useful visuals include metadata cleanup, image QA, generated setup images, and gallery publishing status.</p>
         </div>
         <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual specs, manual image cleanup, manual publishing.</span></div><div class="workflow-row"><strong>After</strong><span>AI prepares data and images for review.</span></div></div></article>
-          <article class="gallery-card"><h3>Review queue</h3><div class="workflow-preview"><div class="workflow-row"><strong>Pending</strong><span>New builds</span></div><div class="workflow-row"><strong>Check</strong><span>Specs and photos</span></div><div class="workflow-row"><strong>Publish</strong><span>Gallery entry</span></div></div></article>
+          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual metadata cleanup, photo checking, image prep, and publishing.</span></div><div class="workflow-row"><strong>After</strong><span>AI prepares, validates, and packages gallery entries for publishing.</span></div></div></article>
+          <article class="gallery-card"><h3>QA queue</h3><div class="workflow-preview"><div class="workflow-row"><strong>Payload</strong><span>Confirm valid gallery request</span></div><div class="workflow-row"><strong>Content</strong><span>Check title, quote, description, tier, and tags</span></div><div class="workflow-row"><strong>Photos</strong><span>Keep relevant PC images and remove invalid ones</span></div></div></article>
+          <article class="gallery-card"><h3>AI setup image</h3><div class="workflow-preview"><div class="workflow-row"><strong>Select</strong><span>Choose the strongest uploaded build photo</span></div><div class="workflow-row"><strong>Generate</strong><span>Create polished setup visuals around the real PC</span></div><div class="workflow-row"><strong>Label</strong><span>Add AI-generated watermark before upload</span></div></div></article>
         </div>
       </div>
     </section>
@@ -149,7 +160,7 @@
     <section class="section" id="why-it-matters">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Why this matters</p><h2>Content operations should not slow down sales and marketing.</h2></div>
-        <p class="large-copy">The solution turned a repetitive publishing process into a cleaner workflow that helps the business showcase more builds with less manual effort.</p>
+        <p class="large-copy">The solution turned a repetitive publishing process into a cleaner workflow that helps the business showcase more builds with less manual effort, stronger QA, and better visual presentation.</p>
       </div>
     </section>
 
