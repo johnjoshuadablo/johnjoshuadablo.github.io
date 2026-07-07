@@ -490,6 +490,106 @@
       color: var(--ink);
     }
 
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .study-card {
+      position: relative;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-column: span 2;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 250, 0.78)),
+        var(--white);
+      box-shadow: 0 18px 60px rgba(16, 19, 24, 0.06);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .study-card:nth-child(1),
+    .study-card:nth-child(2) {
+      grid-column: span 3;
+      min-height: 300px;
+    }
+
+    .study-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(15, 122, 91, 0.28);
+      box-shadow: 0 28px 80px rgba(16, 19, 24, 0.10);
+    }
+
+    .study-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .study-tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--accent-dark);
+      background: var(--panel-strong);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .study-number {
+      color: #c4cad3;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .study-card h3 {
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .study-card p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .study-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .study-outcome {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .study-link {
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .service-card {
       display: flex;
       flex-direction: column;
@@ -507,14 +607,27 @@
     }
 
     .case-feature {
+      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.65fr);
       gap: 0;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(15, 122, 91, 0.22);
       border-radius: 8px;
-      background: var(--white);
-      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(15, 122, 91, 0.12), transparent 36%),
+        var(--white);
+      box-shadow: 0 34px 110px rgba(16, 19, 24, 0.12);
+    }
+
+    .case-feature::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #101318);
     }
 
     .case-content {
@@ -530,6 +643,27 @@
       background: var(--panel-strong);
       font-size: 12px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .case-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .case-featured-pill {
+      display: inline-flex;
+      padding: 7px 10px;
+      border: 1px solid rgba(15, 122, 91, 0.22);
+      border-radius: 8px;
+      color: var(--accent-dark);
+      background: rgba(238, 245, 241, 0.72);
+      font-size: 12px;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -559,11 +693,41 @@
       line-height: 1.6;
     }
 
+    .case-outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .case-outcome {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .case-outcome strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .case-outcome span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     .case-points {
       display: grid;
       gap: 18px;
       padding: clamp(32px, 5vw, 44px);
-      background: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(16, 19, 24, 0.94), rgba(16, 19, 24, 1)),
+        var(--ink);
       color: var(--white);
     }
 
@@ -812,8 +976,10 @@
       .two-column,
       .pain-panel,
       .grid-3,
+      .case-study-grid,
       .mini-grid,
       .case-feature,
+      .case-outcomes,
       .about,
       .faq {
         grid-template-columns: 1fr;
@@ -834,6 +1000,13 @@
       .process-step {
         grid-template-columns: 1fr;
         gap: 12px;
+      }
+
+      .study-card,
+      .study-card:nth-child(1),
+      .study-card:nth-child(2) {
+        grid-column: span 1;
+        min-height: auto;
       }
     }
 
@@ -860,6 +1033,7 @@
 
       .proof-item,
       .card,
+      .study-card,
       .credibility-item,
       .mini-card,
       details,
@@ -1114,7 +1288,10 @@
           </div>
           <article class="case-feature">
             <div class="case-content">
-              <span class="case-tag">AI automation</span>
+              <div class="case-title-row">
+                <span class="case-tag">AI automation</span>
+                <span class="case-featured-pill">Highest clarity case study</span>
+              </div>
               <h3>Before, staff had to manually monitor Facebook comments and repeat the same answers.</h3>
               <p>
                 Customer inquiries were arriving through Facebook comments faster than staff could respond. Repetitive
@@ -1130,8 +1307,23 @@
                 <li>Improved response consistency across common questions.</li>
                 <li>Created visibility into handled comments, exceptions, and follow-ups.</li>
               </ul>
+              <div class="case-outcomes" aria-label="Featured case study outcomes">
+                <div class="case-outcome">
+                  <strong>Less repetitive work</strong>
+                  <span>Common comment responses no longer needed the same manual effort every time.</span>
+                </div>
+                <div class="case-outcome">
+                  <strong>More consistent replies</strong>
+                  <span>Customer communication followed clearer business logic.</span>
+                </div>
+                <div class="case-outcome">
+                  <strong>Human review preserved</strong>
+                  <span>Complex conversations could still be escalated to staff.</span>
+                </div>
+              </div>
               <div class="hero-actions">
                 <a class="button button-primary" href="case-study-ai-facebook-comment-automation.html">Read the full case study</a>
+                <a class="button button-secondary" href="#other-case-studies">View more case studies</a>
               </div>
             </div>
             <div class="case-points">
@@ -1164,36 +1356,81 @@
               friction across marketing, content, reporting, and internal visibility.
             </p>
           </div>
-          <div class="grid-3">
-            <article class="card">
-              <h3>Facebook Auto Post for High-Viewed Products</h3>
-              <p>Turn product-view activity into a social publishing workflow that helps marketing act on real customer
-                interest.</p>
-              <a class="card-link" href="case-study-facebook-auto-post-high-viewed-products.html">Read the case study</a>
-            </article>
-            <article class="card">
-              <h3>PC Build Gallery AI Data Entry</h3>
-              <p>Use AI to reduce repetitive PC build data entry while preparing cleaner gallery content and enhanced
-                images.</p>
-              <a class="card-link" href="case-study-pc-build-gallery-ai-data-entry.html">Read the case study</a>
-            </article>
-            <article class="card">
-              <h3>Auto Webasite Blogs</h3>
-              <p>Automate tech topic research and SEO content preparation so publishing becomes more consistent and
-                less manual.</p>
-              <a class="card-link" href="case-study-auto-website-blogs.html">Read the case study</a>
-            </article>
-            <article class="card">
-              <h3>Auto SMS Sales Report</h3>
-              <p>Send key people and shareholders recurring sales, gross, net, and margin updates without manual report
-                preparation.</p>
-              <a class="card-link" href="case-study-auto-sms-sales-report.html">Read the case study</a>
-            </article>
-            <article class="card">
-              <h3>Looker Studio Sales ETL Automation</h3>
-              <p>Automate sales and transaction data loading so Looker Studio dashboards stay easier to maintain.</p>
-              <a class="card-link" href="case-study-looker-studio-sales-etl.html">Read the case study</a>
-            </article>
+          <div class="case-study-grid">
+            <a class="study-card" href="case-study-facebook-auto-post-high-viewed-products.html">
+              <span class="study-card-top">
+                <span class="study-tag">Marketing automation</span>
+                <span class="study-number">01</span>
+              </span>
+              <span>
+                <h3>Facebook Auto Post for High-Viewed Products</h3>
+                <p>Turn product-view activity into a social publishing workflow that helps marketing act on real
+                  customer interest.</p>
+              </span>
+              <span class="study-card-bottom">
+                <span class="study-outcome">Demand-led posting</span>
+                <span class="study-link">Read case study</span>
+              </span>
+            </a>
+            <a class="study-card" href="case-study-pc-build-gallery-ai-data-entry.html">
+              <span class="study-card-top">
+                <span class="study-tag">Content operations</span>
+                <span class="study-number">02</span>
+              </span>
+              <span>
+                <h3>PC Build Gallery AI Data Entry</h3>
+                <p>Use AI to reduce repetitive PC build data entry while preparing cleaner gallery content and enhanced
+                  images.</p>
+              </span>
+              <span class="study-card-bottom">
+                <span class="study-outcome">Cleaner publishing</span>
+                <span class="study-link">Read case study</span>
+              </span>
+            </a>
+            <a class="study-card" href="case-study-auto-website-blogs.html">
+              <span class="study-card-top">
+                <span class="study-tag">SEO automation</span>
+                <span class="study-number">03</span>
+              </span>
+              <span>
+                <h3>Auto Website Blogs</h3>
+                <p>Automate tech topic research and SEO content preparation so publishing becomes more consistent and
+                  less manual.</p>
+              </span>
+              <span class="study-card-bottom">
+                <span class="study-outcome">Consistent content</span>
+                <span class="study-link">Read case study</span>
+              </span>
+            </a>
+            <a class="study-card" href="case-study-auto-sms-sales-report.html">
+              <span class="study-card-top">
+                <span class="study-tag">Executive reporting</span>
+                <span class="study-number">04</span>
+              </span>
+              <span>
+                <h3>Auto SMS Sales Report</h3>
+                <p>Send key people and shareholders recurring sales, gross, net, and margin updates without manual
+                  report preparation.</p>
+              </span>
+              <span class="study-card-bottom">
+                <span class="study-outcome">Faster visibility</span>
+                <span class="study-link">Read case study</span>
+              </span>
+            </a>
+            <a class="study-card" href="case-study-looker-studio-sales-etl.html">
+              <span class="study-card-top">
+                <span class="study-tag">Data pipeline</span>
+                <span class="study-number">05</span>
+              </span>
+              <span>
+                <h3>Looker Studio Sales ETL Automation</h3>
+                <p>Automate sales and transaction data loading so Looker Studio dashboards stay easier to maintain.</p>
+              </span>
+              <span class="study-card-bottom">
+                <span class="study-outcome">Dashboard readiness</span>
+                <span class="study-link">Read case study</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
