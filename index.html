@@ -1,251 +1,1044 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Joshua Dablo builds custom automation systems that reduce costs, save businesses time, and eliminate repetitive work for growing SMEs.">
   <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="object">
-  <meta property="og:title" content="John Joshua S. Dablo">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Joshua Dablo | Custom Automation Systems">
+  <meta property="og:description"
+    content="Reduce costs, save time, and eliminate repetitive work with custom business automation systems.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/">
-  <meta property="og:site_name" content="Joshua Dablo Website">
+  <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
   <meta property="og:image:secure_url" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
   <meta property="og:image:width" content="833">
   <meta property="og:image:height" content="500">
-  <title>John Joshua Dablo</title>
-  <link rel="shortcut icon" href="https://johnjoshuadablo.github.io/favicon.ico" />
+  <title>Joshua Dablo | Custom Automation Systems</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    :root {
+      --ink: #101318;
+      --muted: #5b6472;
+      --line: #e6e9ee;
+      --panel: #f7f8fa;
+      --panel-strong: #eef5f1;
+      --accent: #0f7a5b;
+      --accent-dark: #08533e;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(16, 19, 24, 0.08);
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .page-shell {
+      overflow: hidden;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(230, 233, 238, 0.82);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--ink);
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: 0 12px 28px rgba(16, 19, 24, 0.16);
+    }
+
+    .button-primary:hover {
+      background: #000000;
+    }
+
+    .button-secondary {
+      color: var(--ink);
+      background: var(--white);
+      border-color: var(--line);
+    }
+
+    .button-secondary:hover {
+      border-color: #cbd1da;
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 56px;
+      background:
+        linear-gradient(180deg, rgba(247, 248, 250, 0.84), rgba(255, 255, 255, 0) 72%),
+        radial-gradient(circle at 80% 18%, rgba(15, 122, 91, 0.10), transparent 32%),
+        var(--white);
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 76px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-item {
+      min-height: 132px;
+      padding: 28px;
+      background: var(--white);
+    }
+
+    .proof-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .proof-value {
+      margin-top: 14px;
+      font-size: 24px;
+      line-height: 1.22;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-muted {
+      background: var(--panel);
+    }
+
+    .section-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.65fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-lede {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.6fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .large-copy {
+      color: var(--ink);
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.18;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .body-copy {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .outcome-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .outcome {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--accent-dark);
+      background: var(--panel-strong);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+      min-height: 292px;
+    }
+
+    .service-number {
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.65fr);
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .case-content {
+      padding: clamp(32px, 6vw, 58px);
+    }
+
+    .case-tag {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--accent-dark);
+      background: var(--panel-strong);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .case-content h3 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .case-content p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .case-points {
+      display: grid;
+      gap: 18px;
+      padding: clamp(32px, 5vw, 44px);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .case-point {
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .case-point:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .case-point span {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .case-point strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.38;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 0.65fr) minmax(320px, 0.75fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-visual {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual img {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+    }
+
+    .process {
+      display: grid;
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 88px 0.46fr 1fr;
+      gap: 28px;
+      align-items: start;
+      padding: 30px;
+      background: var(--white);
+    }
+
+    .process-step span {
+      color: var(--accent-dark);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .process-step h3 {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .faq {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    details {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    details p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .cta {
+      padding: 96px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .cta-inner {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .cta .button-primary {
+      margin-top: 32px;
+      color: var(--ink);
+      background: var(--white);
+      box-shadow: none;
+    }
+
+    .cta .button-primary:hover {
+      background: #eef1f5;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.58);
+      background: var(--ink);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        min-height: auto;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+
+      .hero-proof,
+      .section-heading,
+      .two-column,
+      .grid-3,
+      .case-feature,
+      .about,
+      .faq {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof {
+        margin-top: 52px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section-heading {
+        gap: 20px;
+      }
+
+      .process-step {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav,
+      .section-inner,
+      .hero-inner,
+      .footer-inner,
+      .cta-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .proof-item,
+      .card,
+      details,
+      .process-step {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
-<style>
-  body {
-    cursor:url(https://johnjoshuadablo.github.io/images/cursor.gif), auto;
-    background-image: url('https://johnjoshuadablo.github.io/images/background.png');
-    width: '100%';
-  }
-
-  h1 {
-    color: blue;
-  }
-
-  p {
-    color: black;
-  }
-
-  p.welcome {
-    font-size: 50px;
-    font-weight: 700;
-    color: whitesmoke;
-  }
-
-  .header {
-    margin-top: 30px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .welcome {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .details {
-    position: relative;
-    z-index: 5;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
-  .avatar {
-    max-height: 150px;
-    border-radius: 50%;
-  }
-
-  .more-info {
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
-  h1.link {
-    padding: 10px;
-    background-color: yellow;
-    color: grey;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
-  p.footer {
-    font-size: 10px;
-  }
-
-  .random-gif {
-    position: absolute;
-    left: 10%;
-    top: 80%;
-  }
-
-  .random-gif1 {
-    position: absolute;
-    right: 10%;
-    top: 60%;
-  }
-
-  .random-gif2 {
-    position: absolute;
-    right: 10%;
-    top: 100%;
-  }
-</style>
-
-<style>
-  .bounce {
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-    background: blue;
-    color: red;
-    border: 1px solid red;
-  }
-
-  .bounce p {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    line-height: 50px;
-    color: red;
-    text-align: center;
-    -moz-transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
-    -moz-animation: bouncing-text 5s linear infinite alternate;
-    -webkit-animation: bouncing-text 5s linear infinite alternate;
-    animation: bouncing-text 10s linear infinite alternate;
-  }
-
-  @-moz-keyframes bouncing-text {
-    0% {
-      -moz-transform: translateX(50%);
-    }
-
-    100% {
-      -moz-transform: translateX(-50%);
-    }
-  }
-
-  @-webkit-keyframes bouncing-text {
-    0% {
-      -webkit-transform: translateX(50%);
-    }
-
-    100% {
-      -webkit-transform: translateX(-50%);
-    }
-  }
-
-  @keyframes bouncing-text {
-    0% {
-      -moz-transform: translateX(50%);
-      -webkit-transform: translateX(50%);
-      transform: translateX(50%);
-    }
-
-    100% {
-      -moz-transform: translateX(-50%);
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-    }
-  }
-</style>
-
-<style>
-  /* width */
-  ::-webkit-scrollbar {
-    width: 20px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: red;
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
-  }
-</style>
 
 <body>
+  <div class="page-shell">
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Joshua Dablo home">
+          <span class="brand-mark">JD</span>
+          <span>Joshua Dablo</span>
+        </a>
+        <div class="nav-links">
+          <a href="#problems">Problems</a>
+          <a href="#services">Services</a>
+          <a href="#case-study">Case study</a>
+          <a href="#process">Process</a>
+        </div>
+        <a class="button button-primary"
+          href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+          Book a Free Discovery Call
+        </a>
+      </nav>
+    </header>
 
-  <div class="header">
-    <div class="welcome">
-      <img height="80" src="images/stars.gif">
-      <img style="margin-left:5%; margin-right: 5%;" height="100" src="images/welcome.gif">
-      <img height="80" src="images/stars.gif">
-    </div>
-    <p style="margin-top: 2%;" class="welcome">
-      TO MY
-    </p>
-    <p style="line-height: 0%;" class="welcome">
-      WEBSITE!!!
-    </p>
-    <div class="bounce">
-      <p>HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!!</p>
-    </div>
-  </div>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <p class="eyebrow">Automation systems for growing SMEs</p>
+          <h1 id="hero-title">Reduce Costs. Save Time. Automate Repetitive Work.</h1>
+          <p class="hero-copy">
+            I build custom automation systems that reduce costs, save businesses time, and eliminate repetitive work
+            across operations, reporting, sales handoffs, and back-office workflows.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary"
+              href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+              Book a Free Discovery Call
+            </a>
+            <a class="button button-secondary" href="#case-study">See the approach</a>
+          </div>
 
-  <img class="random-gif" src="images/unicorn.gif">
-  <img class="random-gif1" src="images/titan.gif">
-  <img class="random-gif2" src="images/arnold.gif">
+          <div class="hero-proof" aria-label="Who this is for">
+            <div class="proof-item">
+              <p class="proof-label">Who I help</p>
+              <p class="proof-value">Founders, CEOs, and operations managers</p>
+            </div>
+            <div class="proof-item">
+              <p class="proof-label">Best fit</p>
+              <p class="proof-value">Growing SMEs with 10 to 200 employees</p>
+            </div>
+            <div class="proof-item">
+              <p class="proof-label">Primary outcome</p>
+              <p class="proof-value">Less manual work and cleaner operations</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <div class="details">
-    <img style="border:5px groove gold;" class="avatar" src="images/user.png">
-    <h2 style="background-color:coral; color: white;  padding: 20px;">Name: John Joshua S. Dablo</h2>
-    <h2 style="background-color:violet; color: white; margin-top: -3px; padding: 10px;">Zodiac $ign: Dragon</h2>
-    <h2 style="background-color:greenyellow; color: white; margin-top: -3px; padding: 10px;">Country: Philippines</h2>
-    <h2 style="background-color:aqua; color: white; margin-top: -3px; padding: 10px;">Skillz: ✨WEBSITE
-      DESIGNING✨ (JK, Really, I can't), HTML, Programming skilzz</h2>
-    <h2 style="background-color:midnightblue; color: white; margin-top: -3px; padding: 10px;">Email: (づ｡◕‿‿◕｡)づ
-      (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ≧◡≦</h2>
-    <p>joshuadablo.jd@gmail.com</p>
-  </div>
-  <div class="bounce">
-    <p>HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!! HELLO IM JOHN JOSHUA !!!</p>
-  </div>
+      <section class="section" id="what-i-do" aria-labelledby="what-i-do-title">
+        <div class="section-inner two-column">
+          <div>
+            <p class="section-kicker">What I do</p>
+            <h2 id="what-i-do-title">I turn manual business workflows into reliable systems.</h2>
+          </div>
+          <div>
+            <p class="large-copy">
+              The goal is not more software. The goal is fewer bottlenecks, faster decisions, and work that no longer
+              depends on people copying data between tools.
+            </p>
+            <div class="outcome-list">
+              <div class="outcome">
+                <span class="check">OK</span>
+                <p>Map the repetitive work that slows your team down.</p>
+              </div>
+              <div class="outcome">
+                <span class="check">OK</span>
+                <p>Design a practical automation system around your current tools and team.</p>
+              </div>
+              <div class="outcome">
+                <span class="check">OK</span>
+                <p>Ship workflows that reduce manual follow-ups, duplicate entry, and operational blind spots.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <div class="more-info">
-    <img height="80" src="images/fire.gif">
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-      <h1 class="link">CLICK HERE TO KNOW MORE ABOUT ME!!!</h1>
-    </a>
-    <img height="80" src="images/fire.gif">
-  </div>
+      <section class="section section-muted" id="problems" aria-labelledby="problems-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Problems I solve</p>
+              <h2 id="problems-title">If it happens every week, it should not depend on memory.</h2>
+            </div>
+            <p class="section-lede">
+              Most automation opportunities are hiding in plain sight: spreadsheets, inboxes, repeated approvals,
+              status updates, reports, and customer handoffs.
+            </p>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Manual reporting</h3>
+              <p>Replace recurring spreadsheet work with cleaner data collection, scheduled preparation, and exception
+                checks before reports reach leadership.</p>
+            </article>
+            <article class="card">
+              <h3>Slow handoffs</h3>
+              <p>Connect sales, operations, finance, and delivery steps so work moves with context instead of being
+                chased through messages.</p>
+            </article>
+            <article class="card">
+              <h3>Duplicate data entry</h3>
+              <p>Reduce copy-paste work between forms, sheets, CRMs, accounting tools, and internal trackers.</p>
+            </article>
+            <article class="card">
+              <h3>Approval bottlenecks</h3>
+              <p>Create clear routing, reminders, and decision records so managers can approve work without becoming
+                the bottleneck.</p>
+            </article>
+            <article class="card">
+              <h3>Operational blind spots</h3>
+              <p>Build lightweight dashboards and alerts around the numbers that matter before problems become urgent.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Messy internal tools</h3>
+              <p>Simplify the systems your team already uses so the business runs from one source of truth.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  <div class="footer">
-    <p class="footer" style="color: whitesmoke;">Disclaimer: This site is for entertainment purpose only. I do not own
-      any picture used in this website.
-    </p>
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Services</p>
+              <h2 id="services-title">Outcome-first automation for lean teams.</h2>
+            </div>
+            <p class="section-lede">
+              Each engagement starts with the business problem, not the technology stack. The system is designed around
+              the cost of delay, the people involved, and the result your team needs.
+            </p>
+          </div>
+          <div class="grid-3">
+            <article class="card service-card">
+              <div>
+                <p class="service-number">01</p>
+                <h3>Automation Audit</h3>
+                <p>Identify the highest-value manual workflows, estimate the time they consume, and prioritize what is
+                  worth automating first.</p>
+              </div>
+              <a class="button button-secondary" href="#contact">Discuss an audit</a>
+            </article>
+            <article class="card service-card">
+              <div>
+                <p class="service-number">02</p>
+                <h3>Workflow Automation</h3>
+                <p>Turn recurring tasks into dependable workflows for reporting, approvals, notifications, data entry,
+                  lead routing, and internal operations.</p>
+              </div>
+              <a class="button button-secondary" href="#contact">Automate a workflow</a>
+            </article>
+            <article class="card service-card">
+              <div>
+                <p class="service-number">03</p>
+                <h3>Internal Systems</h3>
+                <p>Build practical internal tools that help teams manage work, track status, and make decisions without
+                  adding admin overhead.</p>
+              </div>
+              <a class="button button-secondary" href="#contact">Plan a system</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="case-study" aria-labelledby="case-study-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Featured case study</p>
+              <h2 id="case-study-title">A reporting workflow built for speed, accuracy, and less follow-up.</h2>
+            </div>
+            <p class="section-lede">
+              The strongest automation projects usually start with a painful recurring process: the same data requests,
+              the same spreadsheet cleanup, the same status questions, and the same deadline pressure.
+            </p>
+          </div>
+          <article class="case-feature">
+            <div class="case-content">
+              <span class="case-tag">Operations automation</span>
+              <h3>From manual reporting cycle to a repeatable operating system.</h3>
+              <p>
+                The work starts by documenting who sends data, where it lands, what needs validation, and which
+                decisions depend on the report. From there, the system removes avoidable admin work and keeps people
+                focused on exceptions instead of routine preparation.
+              </p>
+              <p>
+                The result is a workflow that is easier to run, easier to audit, and easier to improve as the business
+                grows.
+              </p>
+            </div>
+            <div class="case-points">
+              <div class="case-point">
+                <span>Business problem</span>
+                <strong>Reports took too much manual coordination and were vulnerable to late or inconsistent inputs.</strong>
+              </div>
+              <div class="case-point">
+                <span>System designed</span>
+                <strong>Data intake, validation rules, reminders, summary views, and exception alerts.</strong>
+              </div>
+              <div class="case-point">
+                <span>Business impact</span>
+                <strong>Less repeated follow-up, faster visibility, and a clearer owner for each step.</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="other-case-studies" aria-labelledby="other-case-studies-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Other case studies</p>
+              <h2 id="other-case-studies-title">Common automation wins for growing teams.</h2>
+            </div>
+            <p class="section-lede">
+              These are the kinds of business systems that create immediate leverage because they remove recurring
+              operational friction.
+            </p>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Lead intake and routing</h3>
+              <p>Capture inquiries, qualify them, notify the right owner, and prevent good opportunities from getting
+                lost in inboxes.</p>
+            </article>
+            <article class="card">
+              <h3>Finance approval flow</h3>
+              <p>Route requests, collect context, track approval status, and keep a clean record for managers and
+                finance teams.</p>
+            </article>
+            <article class="card">
+              <h3>Operations tracker</h3>
+              <p>Give teams one place to see status, ownership, deadlines, blockers, and next actions without more
+                meetings.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="about" aria-labelledby="about-title">
+        <div class="section-inner about">
+          <div class="about-visual">
+            <img src="images/professional.jpeg" alt="Workspace representing business systems and automation planning">
+          </div>
+          <div>
+            <p class="section-kicker">About Joshua Dablo</p>
+            <h2 id="about-title">A practical automation partner for business owners.</h2>
+            <p class="body-copy" style="margin-top: 24px;">
+              I help growing businesses remove repetitive work from daily operations. My focus is on understanding the
+              business process first, then building the simplest reliable system that saves time, reduces errors, and
+              gives owners better visibility.
+            </p>
+            <p class="body-copy" style="margin-top: 18px;">
+              You do not need to know what tool or technology you need. You need a clear problem, a team that is tired
+              of doing the same manual steps, and a willingness to turn that process into a better system.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#contact">Start with a discovery call</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process" aria-labelledby="process-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">My process</p>
+              <h2 id="process-title">Simple enough to start. Structured enough to trust.</h2>
+            </div>
+            <p class="section-lede">
+              The process is designed for busy operators. It moves from business diagnosis to shipped workflow without
+              turning the project into a long technical exercise.
+            </p>
+          </div>
+          <div class="process">
+            <article class="process-step">
+              <span>01</span>
+              <h3>Diagnose the workflow</h3>
+              <p>We clarify the manual process, who owns each step, where time is lost, and what business outcome the
+                system must improve.</p>
+            </article>
+            <article class="process-step">
+              <span>02</span>
+              <h3>Design the system</h3>
+              <p>I map the future workflow, define the inputs and outputs, and choose the most practical implementation
+                path for your current operation.</p>
+            </article>
+            <article class="process-step">
+              <span>03</span>
+              <h3>Build and test</h3>
+              <p>The automation is built in focused cycles, tested against real scenarios, and adjusted around how your
+                team actually works.</p>
+            </article>
+            <article class="process-step">
+              <span>04</span>
+              <h3>Launch and improve</h3>
+              <p>Your team gets a clear handoff, a maintainable system, and next-step recommendations for future
+                automation opportunities.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="faq" aria-labelledby="faq-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Frequently asked questions</p>
+              <h2 id="faq-title">Questions business owners ask before automating.</h2>
+            </div>
+            <p class="section-lede">
+              A good automation project should make the business easier to run, not create a new system nobody wants to
+              maintain.
+            </p>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Do I need to know what software I want?</summary>
+              <p>No. The discovery call starts with the business process, the people involved, and the outcome you want.
+                The tools come after the problem is clear.</p>
+            </details>
+            <details>
+              <summary>What workflows are best for automation?</summary>
+              <p>Recurring workflows with clear rules are usually the best fit: reports, approvals, lead routing,
+                notifications, data cleanup, and status tracking.</p>
+            </details>
+            <details>
+              <summary>Will this replace my team?</summary>
+              <p>The goal is to remove low-value admin work so your team can spend more time on decisions, customers,
+                and higher-value operations.</p>
+            </details>
+            <details>
+              <summary>How do we start?</summary>
+              <p>Send a short note with your company size, the workflow you want to improve, and a few available call
+                times. I will respond with next steps.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contact" aria-labelledby="contact-title">
+        <div class="cta-inner">
+          <h2 id="contact-title">Ready to remove repetitive work from your business?</h2>
+          <p>
+            Book a free discovery call and we will identify the highest-value workflow to automate first.
+          </p>
+          <a class="button button-primary"
+            href="mailto:joshuadablo.jd@gmail.com?subject=Discovery%20Call%20Request&amp;body=Hi%20Joshua%2C%0A%0AI%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automation%20for%20my%20business.%0A%0ACompany%3A%0ATeam%20size%3A%0AMain%20manual%20workflow%3A%0APreferred%20call%20times%3A">
+            Book a Free Discovery Call
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>Joshua Dablo. Custom automation systems for growing SMEs.</span>
+        <a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a>
+      </div>
+    </footer>
   </div>
 </body>
-<script type="text/javascript" src="https://johnjoshuadablo.github.io/js/cursor.js"></script>
+
 </html>
