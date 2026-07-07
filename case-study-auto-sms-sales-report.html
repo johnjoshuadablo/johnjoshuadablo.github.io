@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Case study: automated SMS sales reports for key people and shareholders.">
+    content="Case study: AWS-scheduled automated SMS sales reports for key people and shareholders.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Automated SMS Sales Report | Joshua Dablo Case Study">
   <meta property="og:description"
-    content="How daily sales, gross, net, and margin reporting became an automated SMS workflow.">
+    content="How daily sales, gross, and margin reporting became an AWS-scheduled SMS workflow for decision-makers.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-auto-sms-sales-report.html">
   <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
@@ -38,8 +38,9 @@
         <p class="eyebrow">Case study</p>
         <h1>Automated SMS Sales Report</h1>
         <p class="hero-copy">
-          Key people needed timely visibility into sales performance without waiting for manual reports. I built an
-          automated SMS workflow that sends sales, gross, net, and margin percentage updates to decision-makers.
+          Key people needed timely visibility into daily sales performance without waiting for manual reports. I built
+          an AWS-scheduled Lambda workflow that pulls sales totals, formats a concise executive SMS, and sends it to a
+          controlled list of decision-makers.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -58,8 +59,8 @@
 
     <section class="section" id="overview">
       <div class="section-inner two-column">
-        <div><p class="section-kicker">Overview</p><h2>Manual sales updates became automated executive visibility.</h2></div>
-        <p class="large-copy">The system helped key people receive consistent performance updates without waiting for staff to prepare and send numbers manually.</p>
+        <div><p class="section-kicker">Overview</p><h2>Manual sales updates became scheduled executive visibility.</h2></div>
+        <p class="large-copy">The system helped key people receive same-day sales performance updates without waiting for staff to log in, calculate totals, format messages, and send numbers manually.</p>
       </div>
     </section>
 
@@ -67,12 +68,15 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">The business problem</p><h2>Sales performance updates were too dependent on manual reporting.</h2></div>
-          <p class="section-lede">Leadership and shareholders needed regular visibility into total sales, gross, net, and margin percentage. Manual updates created delay and repeated admin work.</p>
+          <p class="section-lede">Leadership and shareholders needed regular visibility into today's total sales, gross, and margin percentage. Manual updates created delay, repeated admin work, and inconsistent timing.</p>
         </div>
         <div class="card-grid">
           <article class="card"><h3>Delayed visibility</h3><p>Decision-makers had to wait for reports or ask for updates.</p></article>
           <article class="card"><h3>Repeated manual work</h3><p>Staff had to calculate, format, and send recurring performance summaries.</p></article>
           <article class="card"><h3>Inconsistent communication</h3><p>Different people could receive updates at different times or in different formats.</p></article>
+          <article class="card"><h3>Login dependency</h3><p>Reporting required system access, authentication, and manual retrieval before the message could be sent.</p></article>
+          <article class="card"><h3>Recipient risk</h3><p>Sales updates needed to go only to selected leaders, not a broad customer list.</p></article>
+          <article class="card"><h3>Mobile-first updates</h3><p>Executives needed the numbers in a format they could read quickly without opening a dashboard.</p></article>
         </div>
       </div>
     </section>
@@ -85,6 +89,9 @@
           <li><strong>Recipient control</strong>The right people needed the right updates without exposing unnecessary information.</li>
           <li><strong>Timing</strong>Reports needed to run on schedule without staff intervention.</li>
           <li><strong>Short format</strong>SMS messages needed to be concise enough for quick leadership review.</li>
+          <li><strong>Authentication flow</strong>The workflow needed to obtain system access before requesting reporting data and sending SMS.</li>
+          <li><strong>Timezone accuracy</strong>The message needed a clear Manila timestamp so recipients knew exactly when the numbers were taken.</li>
+          <li><strong>Send safety</strong>The SMS step needed a guardrail to prevent accidental sending to unintended recipients.</li>
         </ul>
       </div>
     </section>
@@ -93,9 +100,10 @@
       <div class="section-inner">
         <div class="solution-panel">
           <p class="section-kicker">Solution</p>
-          <h2>A scheduled SMS reporting workflow for sales performance.</h2>
-          <p class="body-copy" style="margin-top: 22px;">I created an automation that gathers sales data, applies reporting calculations, formats the summary, and sends SMS updates to key people and shareholders.</p>
-          <p class="body-copy" style="margin-top: 18px;">The focus was not another dashboard. The focus was making the right numbers reach the right people without manual chasing.</p>
+          <h2>A scheduled Lambda workflow for executive sales visibility.</h2>
+          <p class="body-copy" style="margin-top: 22px;">I created an AWS-scheduled automation that authenticates with the internal system, requests today's sales computation, extracts the key figures, formats the values in Philippine peso, and prepares a short SMS summary.</p>
+          <p class="body-copy" style="margin-top: 18px;">The message includes the Manila timestamp, total sales, gross, and margin percentage so leaders can understand the current sales picture at a glance.</p>
+          <p class="body-copy" style="margin-top: 18px;">The SMS send step uses a controlled recipient list and includes a safety check that stops execution if there are no intended recipients, reducing the risk of sending sensitive business data to the wrong audience.</p>
         </div>
       </div>
     </section>
@@ -103,12 +111,12 @@
     <section class="section" id="architecture">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">System architecture</p><h2>From sales data to scheduled SMS visibility.</h2></div>
-          <p class="section-lede">The workflow connects source data, calculations, message formatting, recipient rules, and SMS delivery.</p>
+          <div><p class="section-kicker">System architecture</p><h2>From scheduled Lambda run to executive SMS visibility.</h2></div>
+          <p class="section-lede">The workflow connects AWS scheduling, authentication, sales computation, message formatting, recipient guardrails, and SMS delivery.</p>
         </div>
         <div class="solution-panel">
           <div class="architecture">
-            <div class="arch-node">Sales data</div><div class="arch-node">Scheduler</div><div class="arch-node">Calculations</div><div class="arch-node">Report format</div><div class="arch-node">Recipient rules</div><div class="arch-node">SMS send</div><div class="arch-node">Delivery log</div>
+            <div class="arch-node">AWS Scheduler</div><div class="arch-node">Lambda function</div><div class="arch-node">System auth</div><div class="arch-node">Sales computation</div><div class="arch-node">SMS format</div><div class="arch-node">Recipient guardrail</div><div class="arch-node">SMS delivery</div>
           </div>
         </div>
       </div>
@@ -121,7 +129,9 @@
           <li><strong>Faster visibility</strong>Key people received sales performance updates without waiting for manual reports.</li>
           <li><strong>Reduced reporting admin</strong>Staff spent less time preparing and sending repeated summaries.</li>
           <li><strong>Consistent format</strong>Recipients received the same core numbers in a repeatable structure.</li>
-          <li><strong>Better operating rhythm</strong>Sales, gross, net, and margin updates became part of a dependable reporting cadence.</li>
+          <li><strong>Better operating rhythm</strong>Sales, gross, and margin updates became part of a dependable reporting cadence.</li>
+          <li><strong>Mobile executive access</strong>Decision-makers could see the numbers through SMS without opening a dashboard.</li>
+          <li><strong>Safer distribution</strong>The automation used an explicit recipient list and send guardrail for sensitive reporting.</li>
         </ul>
       </div>
     </section>
@@ -129,7 +139,7 @@
     <section class="section" id="technologies">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Technologies</p><h2>Automation delivered the numbers where leaders already pay attention.</h2></div>
-        <div class="tech-list"><span>SMS API</span><span>Sales database</span><span>Node.js</span><span>CRON</span><span>Reporting logic</span><span>Delivery logs</span></div>
+        <div class="tech-list"><span>AWS Lambda</span><span>AWS Scheduler</span><span>Node.js</span><span>Sales API</span><span>SMS API</span><span>OAuth flow</span><span>Reporting logic</span><span>Timezone formatting</span></div>
       </div>
     </section>
 
@@ -137,11 +147,12 @@
       <div class="section-inner">
         <div class="section-heading">
           <div><p class="section-kicker">Gallery</p><h2>The key visual is the reporting flow.</h2></div>
-          <p class="section-lede">Useful visuals include message format, recipient rules, and delivery status.</p>
+          <p class="section-lede">Useful visuals include the Lambda schedule, authentication flow, message format, recipient rules, and delivery status.</p>
         </div>
         <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual calculations and manual messages.</span></div><div class="workflow-row"><strong>After</strong><span>Scheduled SMS reporting with consistent numbers.</span></div></div></article>
-          <article class="gallery-card"><h3>SMS summary</h3><div class="workflow-preview"><div class="workflow-row"><strong>Total sales</strong><span>Included</span></div><div class="workflow-row"><strong>Gross / net</strong><span>Included</span></div><div class="workflow-row"><strong>Margin</strong><span>Included</span></div></div></article>
+          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual login, manual sales lookup, manual formatting, manual SMS.</span></div><div class="workflow-row"><strong>After</strong><span>A scheduled Lambda prepares and sends the executive sales summary.</span></div></div></article>
+          <article class="gallery-card"><h3>SMS summary</h3><div class="workflow-preview"><div class="workflow-row"><strong>Timestamp</strong><span>Manila date and time included</span></div><div class="workflow-row"><strong>Sales / gross</strong><span>Formatted in Philippine peso</span></div><div class="workflow-row"><strong>Margin</strong><span>Included as a percentage</span></div></div></article>
+          <article class="gallery-card"><h3>Send controls</h3><div class="workflow-preview"><div class="workflow-row"><strong>Recipients</strong><span>Explicit decision-maker list</span></div><div class="workflow-row"><strong>Guardrail</strong><span>Stop if no intended recipients are configured</span></div><div class="workflow-row"><strong>Result</strong><span>SMS response logged after send</span></div></div></article>
         </div>
       </div>
     </section>
@@ -149,7 +160,7 @@
     <section class="section" id="why-it-matters">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Why this matters</p><h2>Decision-makers should not have to chase core business numbers.</h2></div>
-        <p class="large-copy">The workflow turned recurring sales reporting into a dependable communication system for people who need quick visibility.</p>
+        <p class="large-copy">The workflow turned recurring sales reporting into a dependable communication system for people who need quick visibility, without requiring staff to manually gather and send the numbers.</p>
       </div>
     </section>
 
