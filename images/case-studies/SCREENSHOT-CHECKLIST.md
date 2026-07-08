@@ -35,9 +35,10 @@ Use this checklist to collect sanitized screenshots and visuals for each case st
 
 ## Automated SMS Sales Report
 
-- [ ] AWS Lambda function page screenshot, showing function name only and sensitive config hidden (`auto-sms-sales-report/aws-lambda-function.png`)
-- [ ] AWS Scheduler/EventBridge rule screenshot showing the scheduled trigger (`auto-sms-sales-report/aws-scheduler-trigger.png`)
-- [ ] Sanitized SMS message example showing timestamp, sales, gross, and margin format with dummy numbers (`auto-sms-sales-report/sanitized-sms-example.png`)
+- [x] AWS Lambda function page screenshot, showing function name only and sensitive config hidden (`auto-sms-sales-report/aws-lambda-function.png`)
+- [x] AWS Scheduler/EventBridge rule screenshot showing the scheduled trigger (`auto-sms-sales-report/aws-scheduler-trigger.png`)
+- [x] Sanitized SMS message example showing timestamp, sales, gross, and margin format with dummy numbers (`auto-sms-sales-report/sanitized-sms-example.png`)
+- [x] AWS Lambda flowchart showing authentication, sales retrieval, formatting, and SMS delivery (`auto-sms-sales-report/aws-lambda-flowchart.png`)
 - [ ] Before/after process diagram: manual login/report/message vs scheduled Lambda SMS (`auto-sms-sales-report/before-after-process-diagram.png`)
 - [ ] Optional CloudWatch log screenshot showing successful run, with tokens/data removed (`auto-sms-sales-report/cloudwatch-success-log.png`)
 

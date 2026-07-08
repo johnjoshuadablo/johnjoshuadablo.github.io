@@ -13,7 +13,8 @@
     content="How daily sales, gross, and margin reporting became an AWS-scheduled SMS workflow for decision-makers.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-auto-sms-sales-report.html">
   <meta property="og:site_name" content="Joshua Dablo">
-  <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
+  <meta property="og:image"
+    content="https://johnjoshuadablo.github.io/images/case-studies/auto-sms-sales-report/sanitized-sms-example.png">
   <title>Automated SMS Sales Report | Joshua Dablo Case Study</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="case-study.css">
@@ -146,13 +147,50 @@
     <section class="section section-muted" id="gallery">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">Gallery</p><h2>The key visual is the reporting flow.</h2></div>
-          <p class="section-lede">Useful visuals include the Lambda schedule, authentication flow, message format, recipient rules, and delivery status.</p>
+          <div><p class="section-kicker">Gallery</p><h2>Real workflow proof from the automation.</h2></div>
+          <p class="section-lede">The screenshots show the scheduled trigger, Lambda function, reporting flow, and sanitized SMS output received by decision-makers.</p>
         </div>
-        <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual login, manual sales lookup, manual formatting, manual SMS.</span></div><div class="workflow-row"><strong>After</strong><span>A scheduled Lambda prepares and sends the executive sales summary.</span></div></div></article>
-          <article class="gallery-card"><h3>SMS summary</h3><div class="workflow-preview"><div class="workflow-row"><strong>Timestamp</strong><span>Manila date and time included</span></div><div class="workflow-row"><strong>Sales / gross</strong><span>Formatted in Philippine peso</span></div><div class="workflow-row"><strong>Margin</strong><span>Included as a percentage</span></div></div></article>
-          <article class="gallery-card"><h3>Send controls</h3><div class="workflow-preview"><div class="workflow-row"><strong>Recipients</strong><span>Explicit decision-maker list</span></div><div class="workflow-row"><strong>Guardrail</strong><span>Stop if no intended recipients are configured</span></div><div class="workflow-row"><strong>Result</strong><span>SMS response logged after send</span></div></div></article>
+        <div class="screenshot-grid">
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/auto-sms-sales-report/aws-scheduler-trigger.png"
+                alt="AWS Scheduler trigger configured to run the automated SMS sales report">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Scheduled reporting trigger</h3>
+              <p>The report runs on a defined schedule in the Manila timezone, so leadership updates do not depend on someone remembering to prepare and send them manually.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/auto-sms-sales-report/aws-lambda-function.png"
+                alt="AWS Lambda function used for the automated SMS sales report">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Lambda function</h3>
+              <p>The Lambda function handles the scheduled execution path that authenticates, retrieves sales numbers, formats the message, and sends the SMS update.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/auto-sms-sales-report/aws-lambda-flowchart.png"
+                alt="Flowchart showing authenticate, retrieve sales, format summary, and send SMS">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Reporting flow</h3>
+              <p>The workflow follows a simple operating path: authenticate, retrieve the current sales data, format the executive summary, then send the SMS.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame screenshot-frame-contained">
+              <img src="images/case-studies/auto-sms-sales-report/sanitized-sms-example.png"
+                alt="Sanitized SMS sales report example with sales, gross, and margin values hidden">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Sanitized SMS report</h3>
+              <p>The final message gives decision-makers a fast mobile summary with timestamp, total sales, gross, and margin values while keeping sensitive numbers hidden in the public case study.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
