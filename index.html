@@ -28,6 +28,8 @@
       --panel-strong: #eef5f1;
       --accent: #0f7a5b;
       --accent-dark: #08533e;
+      --risk: #ef4444;
+      --risk-soft: #fca5a5;
       --white: #ffffff;
       --shadow: 0 24px 80px rgba(16, 19, 24, 0.08);
       --max: 1160px;
@@ -463,14 +465,19 @@
       gap: clamp(28px, 5vw, 64px);
       align-items: center;
       padding: clamp(34px, 6vw, 64px);
+      border: 1px solid rgba(239, 68, 68, 0.28);
       border-radius: 8px;
       color: var(--white);
-      background: var(--ink);
-      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(239, 68, 68, 0.16), transparent 30%),
+        var(--ink);
+      box-shadow:
+        0 24px 80px rgba(16, 19, 24, 0.08),
+        0 0 0 1px rgba(239, 68, 68, 0.04);
     }
 
     .pain-panel .section-kicker {
-      color: rgba(255, 255, 255, 0.68);
+      color: var(--risk-soft);
     }
 
     .pain-panel h2 {
@@ -492,13 +499,26 @@
     }
 
     .pain-list li {
-      padding: 16px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+      padding: 16px 18px 16px 42px;
+      border: 1px solid rgba(239, 68, 68, 0.18);
       border-radius: 8px;
       color: rgba(255, 255, 255, 0.82);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
       font-size: 15.5px;
       line-height: 1.48;
+    }
+
+    .pain-list li::before {
+      content: "";
+      position: absolute;
+      top: 23px;
+      left: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--risk);
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.14);
     }
 
     .grid-3 {
