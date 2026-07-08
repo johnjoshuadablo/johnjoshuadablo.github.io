@@ -44,8 +44,8 @@ Use this checklist to collect sanitized screenshots and visuals for each case st
 
 ## Looker Studio Sales ETL Automation
 
-- [ ] AWS Glue job visual/DAG screenshot showing source tables, SQL transform, quality check, and output (`looker-studio-sales-etl/aws-glue-job-dag.png`)
-- [ ] Sanitized SQL transform screenshot showing joins, with private table/database names hidden if needed (`looker-studio-sales-etl/sanitized-sql-transform.png`)
-- [ ] S3/output dataset screenshot showing generated reporting file/folder, no bucket/account details (`looker-studio-sales-etl/s3-output-dataset.png`)
-- [ ] Looker Studio dashboard screenshot with real layout but blurred/sanitized numbers (`looker-studio-sales-etl/looker-studio-dashboard.png`)
+- [x] AWS Glue job visual/DAG screenshot showing source tables, SQL transform, quality check, and output (`looker-studio-sales-etl/aws-glue-job-dag.png`)
+- [x] Sanitized SQL transform screenshot showing joins, with private table/database names hidden if needed (`looker-studio-sales-etl/sanitized-sql-transform.png`)
+- [x] S3/output dataset screenshot showing generated reporting file/folder, no bucket/account details (`looker-studio-sales-etl/s3-output-dataset.png`)
+- [x] Looker Studio dashboard screenshot with real layout but blurred/sanitized numbers (`looker-studio-sales-etl/looker-studio-dashboard.png`)
 - [ ] Before/after process diagram: manual export/table joins/dashboard refresh vs Glue ETL to dashboard (`looker-studio-sales-etl/before-after-process-diagram.png`)

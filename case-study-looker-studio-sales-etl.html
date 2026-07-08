@@ -13,7 +13,8 @@
     content="How sales transaction, product, branch, and ecommerce order data became a reporting-ready pipeline for Google Looker Studio.">
   <meta property="og:url" content="https://johnjoshuadablo.github.io/case-study-looker-studio-sales-etl.html">
   <meta property="og:site_name" content="Joshua Dablo">
-  <meta property="og:image" content="https://johnjoshuadablo.github.io/images/professional.jpeg">
+  <meta property="og:image"
+    content="https://johnjoshuadablo.github.io/images/case-studies/looker-studio-sales-etl/looker-studio-dashboard.png">
   <title>Looker Studio Sales ETL Automation | Joshua Dablo Case Study</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="case-study.css">
@@ -146,13 +147,50 @@
     <section class="section section-muted" id="gallery">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">Gallery</p><h2>Reporting workflows should show data movement clearly.</h2></div>
-          <p class="section-lede">Useful visuals include source tables, SQL joins, data quality checks, output storage, and dashboard refresh flow.</p>
+          <div><p class="section-kicker">Gallery</p><h2>Real workflow proof from the reporting pipeline.</h2></div>
+          <p class="section-lede">The screenshots show source data flowing through AWS Glue, SQL transformation, S3 output, and a sanitized Looker Studio dashboard.</p>
         </div>
-        <div class="gallery-grid">
-          <article class="gallery-card"><h3>Before and after workflow</h3><div class="workflow-preview"><div class="workflow-row"><strong>Before</strong><span>Manual export, table joins, cleanup, and dashboard refresh.</span></div><div class="workflow-row"><strong>After</strong><span>A managed Glue job prepares reporting-ready sales data.</span></div></div></article>
-          <article class="gallery-card"><h3>Pipeline status</h3><div class="workflow-preview"><div class="workflow-row"><strong>Extract</strong><span>Transactions, listings, products, branches, categories, manufacturers, and orders</span></div><div class="workflow-row"><strong>Transform</strong><span>SQL joins and deleted-transaction filtering</span></div><div class="workflow-row"><strong>Load</strong><span>Compressed reporting dataset for dashboards</span></div></div></article>
-          <article class="gallery-card"><h3>Reporting fields</h3><div class="workflow-preview"><div class="workflow-row"><strong>Business context</strong><span>Branch, product, category, manufacturer</span></div><div class="workflow-row"><strong>Commercial data</strong><span>Retail price, dealer price, listing status</span></div><div class="workflow-row"><strong>Ecommerce context</strong><span>Province, delivery option, delivery address</span></div></div></article>
+        <div class="screenshot-grid">
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/looker-studio-sales-etl/aws-glue-job-dag.png"
+                alt="AWS Glue job DAG showing source tables transformed into an S3 output dataset">
+            </div>
+            <div class="screenshot-copy">
+              <h3>AWS Glue job visual</h3>
+              <p>The Glue job connects multiple cataloged source tables, runs the SQL transformation, and writes the reporting output to S3 for dashboard consumption.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card">
+            <div class="screenshot-frame screenshot-frame-contained">
+              <img src="images/case-studies/looker-studio-sales-etl/sanitized-sql-transform.png"
+                alt="Sanitized SQL transform joining sales, product, branch, and ecommerce data">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Sanitized SQL transform</h3>
+              <p>The transformation joins transaction, product, branch, category, manufacturer, listing, and ecommerce context into one reporting-ready dataset.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card">
+            <div class="screenshot-frame screenshot-frame-contained">
+              <img src="images/case-studies/looker-studio-sales-etl/s3-output-dataset.png"
+                alt="S3 output dataset with generated Parquet reporting files">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Reporting dataset output</h3>
+              <p>The job writes generated Parquet files to reporting storage, creating a repeatable data source for dashboards instead of manual exports.</p>
+            </div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame">
+              <img src="images/case-studies/looker-studio-sales-etl/looker-studio-dashboard.png"
+                alt="Sanitized Looker Studio dashboard using the automated sales ETL dataset">
+            </div>
+            <div class="screenshot-copy">
+              <h3>Sanitized Looker Studio dashboard</h3>
+              <p>The dashboard consumes the automated dataset so decision-makers can inspect sales movement, branch performance, transactions, customers, and margin without rebuilding the data manually.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
