@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Case study: a working Google Drive knowledge assistant prototype that turns company policies and SOPs into searchable answers for employees.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Google Drive Knowledge Assistant | Joshua Dablo Case Study">
+  <meta property="og:description"
+    content="How company documents in Google Drive became a searchable internal reference for repeated employee questions.">
+  <meta property="og:url" content="https://joshuadablo.com/case-study-google-drive-knowledge-assistant.html">
+  <meta property="og:site_name" content="Joshua Dablo">
+  <meta property="og:image"
+    content="https://joshuadablo.com/images/case-studies/google-drive-knowledge-assistant/02-question-answering-workflow.png">
+  <title>Google Drive Knowledge Assistant | Joshua Dablo Case Study</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JD</span><span>Joshua Dablo</span></a>
+      <div class="nav-links"><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#proof">Proof</a><a href="#demo">Demo</a></div>
+      <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+        rel="noopener">Book My Free Discovery Call</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
+        <p class="eyebrow">Working prototype</p>
+        <h1>Google Drive Knowledge Assistant</h1>
+        <p class="hero-copy">
+          Company policies, SOPs, and reference files often already contain the right answers. The problem is that employees
+          cannot find those answers quickly, so the same questions keep landing on one knowledgeable person. This prototype
+          turns a shared Google Drive folder into a searchable internal reference employees can ask in plain language.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}'
+            target="_blank" rel="noopener">Book My Free Discovery Call</a>
+          <a class="button button-secondary" href="#demo">Watch the demonstration</a>
+        </div>
+        <div class="client-grid" aria-label="Project details">
+          <div class="client-item"><span>Use case</span><strong>Internal knowledge</strong></div>
+          <div class="client-item"><span>Document source</span><strong>Google Drive</strong></div>
+          <div class="client-item"><span>Status</span><strong>Working prototype</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Overview</p><h2>Ask the company files before interrupting another person.</h2></div>
+        <p class="large-copy">Employees ask a question through chat. The workflow searches the available company documents, retrieves the most relevant sections, and uses those sections to prepare a concise answer.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="problem">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">The business problem</p><h2>The documents existed, but finding the right answer still took too long.</h2></div>
+          <p class="section-lede">A shared folder can store years of policies and operating knowledge without making that information easy to use. Search depends on filenames and memory, while repeated questions continue to interrupt experienced employees.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>Hard-to-find files</h3><p>Employees may know the answer exists but not which document, folder, or section contains it.</p></article>
+          <article class="card"><h3>Repeated questions</h3><p>The same policy and process questions repeatedly land on managers or experienced team members.</p></article>
+          <article class="card"><h3>Inconsistent answers</h3><p>Different employees can interpret or remember the same policy differently.</p></article>
+          <article class="card"><h3>Slow onboarding</h3><p>New hires depend on other people to explain information that is already documented.</p></article>
+          <article class="card"><h3>Changing documents</h3><p>A useful assistant must recognize new and updated files instead of relying on a one-time upload.</p></article>
+          <article class="card"><h3>Unsupported-answer risk</h3><p>If the files do not contain an answer, the system should say so instead of inventing a company rule.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="challenges">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Design boundaries</p><h2>Useful internal answers require clear source boundaries.</h2></div>
+        <ul class="list">
+          <li><strong>Keep the existing folder workflow</strong>The team should continue managing approved files in a familiar shared Drive folder.</li>
+          <li><strong>Recognize document changes</strong>New and updated files need to enter the preparation pipeline automatically.</li>
+          <li><strong>Use matching source material</strong>The answer should be composed after retrieving relevant document sections.</li>
+          <li><strong>Fail honestly</strong>If the documents do not contain the answer, the assistant should return an explicit fallback.</li>
+          <li><strong>Respect document quality</strong>Outdated, vague, or contradictory files will produce weaker answers and still need business ownership.</li>
+          <li><strong>Separate prototype from production</strong>The workflow demonstrates the end-to-end design without claiming production scale or measured business impact.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="solution">
+      <div class="section-inner">
+        <div class="solution-panel">
+          <p class="section-kicker">Solution</p>
+          <h2>One workflow prepares the knowledge. Another retrieves it for employees.</h2>
+          <p class="body-copy" style="margin-top: 22px;">The first pipeline watches a selected Google Drive folder. When a file is created or updated, the workflow downloads it, breaks the content into searchable sections, creates a searchable representation, and stores those sections in the knowledge index.</p>
+          <p class="body-copy" style="margin-top: 18px;">The second pipeline receives an employee question through chat. It searches the indexed company content, retrieves matching sections, and gives that context to the assistant before an answer is prepared.</p>
+          <p class="body-copy" style="margin-top: 18px;">The important boundary is simple: available documents are the reference. When the required information is missing, the assistant uses an explicit unavailable-answer response rather than pretending a policy exists.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">System architecture</p><h2>Document updates in. Relevant company answers out.</h2></div>
+          <p class="section-lede">The implementation separates document preparation from question answering so each pipeline can be inspected and improved independently.</p>
+        </div>
+        <div class="solution-panel">
+          <div class="architecture" aria-label="Google Drive knowledge assistant architecture">
+            <div class="arch-node">Shared Drive folder</div>
+            <div class="arch-node">Document preparation</div>
+            <div class="arch-node">Searchable knowledge</div>
+            <div class="arch-node">Employee question</div>
+            <div class="arch-node">Relevant sections</div>
+            <div class="arch-node">Grounded answer</div>
+            <div class="arch-node">Explicit fallback</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="proof">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Working proof</p><h2>The prototype connects document updates to a usable question-and-answer flow.</h2></div>
+        <ul class="list">
+          <li><strong>New and updated files detected</strong>Separate Drive events feed the same document preparation path.</li>
+          <li><strong>Documents prepared for search</strong>Downloaded files are split into smaller sections before they are indexed.</li>
+          <li><strong>Questions retrieve matching sections</strong>The chat flow uses a retrieval tool before the assistant prepares its response.</li>
+          <li><strong>Missing information has a fallback</strong>The assistant is instructed to state when the available resources do not contain an answer.</li>
+          <li><strong>Both pipelines are visible</strong>The supplied screenshots show the ingestion and question-answering architecture without exposing private data.</li>
+          <li><strong>Public demonstration published</strong>A short TikTok shows the business problem and the prototype concept in a practical format.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="technologies">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Technologies</p><h2>The tools support document retrieval; the business outcome stays simple.</h2></div>
+        <div class="tech-list"><span>Google Drive</span><span>n8n</span><span>Google Gemini</span><span>Pinecone</span><span>Document splitting</span><span>Retrieval-based answering</span><span>Chat interface</span></div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="gallery">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Workflow gallery</p><h2>Two focused pipelines power the assistant.</h2></div>
+          <p class="section-lede">These screenshots show the working n8n structure. They contain no client names, customer details, private URLs, credentials, or internal identifiers.</p>
+        </div>
+        <div class="screenshot-grid">
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/google-drive-knowledge-assistant/01-document-ingestion-workflow.png" alt="n8n workflow that detects new or updated Google Drive files and prepares them for document search" loading="lazy"></div>
+            <div class="screenshot-copy"><h3>Document preparation pipeline</h3><p>New or updated Drive files are downloaded, divided into searchable sections, represented for search, and stored in the document index.</p></div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/google-drive-knowledge-assistant/02-question-answering-workflow.png" alt="n8n chat workflow that retrieves relevant company document sections before preparing an answer" loading="lazy"></div>
+            <div class="screenshot-copy"><h3>Question-answering pipeline</h3><p>An employee question reaches the assistant, which searches the company-document index and uses the matching sections as answer context.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="section-inner">
+        <div class="video-proof">
+          <div class="video-proof-copy">
+            <p class="section-kicker">Public demonstration</p>
+            <h2>The working idea, explained in 27 seconds.</h2>
+            <p>This TikTok presents the business problem without leading with technical terms: company answers already exist, but they are buried inside documents people struggle to find.</p>
+            <p>The video is included as public proof of how the prototype was demonstrated—not as a claim of measured client results.</p>
+            <div class="hero-actions">
+              <a class="button button-secondary" href="https://www.tiktok.com/@josh.ai.automation/video/7674636268759764231" target="_blank" rel="noopener">Watch on TikTok</a>
+            </div>
+          </div>
+          <div class="video-frame">
+            <iframe
+              src="https://www.tiktok.com/player/v1/7674636268759764231?autoplay=0&amp;loop=0&amp;music_info=1&amp;description=1"
+              title="TikTok demonstration of the Google Drive Knowledge Assistant"
+              loading="lazy"
+              allow="fullscreen">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="why-it-matters">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Why this matters</p><h2>Internal knowledge should not disappear into folders or depend on one person's memory.</h2></div>
+        <p class="large-copy">A useful company assistant does not replace the documents or their owners. It makes approved information easier to retrieve while clearly admitting when the available files do not contain the answer.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <h2>Does your team keep asking questions that are already documented?</h2>
+        <p>Book a free discovery call and we will identify whether your policies, SOPs, and reference files can become a more useful internal knowledge workflow.</p>
+        <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+          rel="noopener">Book My Free Discovery Call</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>Joshua Dablo. Custom Automation systems for growing Businesses.</span><a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a></div></footer>
+  <script src="js/cal-embed.js"></script>
+</body>
+
+</html>
