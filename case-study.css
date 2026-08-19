@@ -453,24 +453,27 @@ h2 {
 
 .video-proof {
   display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(280px, 0.3fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(440px, 0.85fr);
+  gap: 52px;
   align-items: center;
-  padding: clamp(28px, 5vw, 52px);
+  padding: clamp(32px, 5vw, 56px);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(15, 122, 91, 0.10), transparent 34%),
+    linear-gradient(135deg, var(--white), var(--panel));
   box-shadow: var(--shadow);
 }
 
 .video-frame {
-  width: min(100%, 360px);
+  width: min(100%, 460px);
   aspect-ratio: 9 / 16;
   justify-self: center;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  border: 10px solid var(--ink);
+  border-radius: 26px;
   background: #000;
+  box-shadow: 0 28px 80px rgba(16, 19, 24, 0.22);
 }
 
 .video-frame iframe {
