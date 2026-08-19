@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Confidential case study: a human-reviewed AI sales copilot that prepares context-aware replies and verified product quotations inside an existing customer inbox.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Sales Copilot | Joshua Dablo Case Study">
+  <meta property="og:description"
+    content="How a specialty retailer turned live customer conversations into review-ready replies and verified quotations without automatic sending.">
+  <meta property="og:url" content="https://joshuadablo.com/case-study-ai-sales-copilot.html">
+  <meta property="og:site_name" content="Joshua Dablo">
+  <meta property="og:image"
+    content="https://joshuadablo.com/images/case-studies/ai-sales-copilot/01-ai-assist-in-inbox.png">
+  <title>AI Sales Copilot | Joshua Dablo Case Study</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JD</span><span>Joshua Dablo</span></a>
+      <div class="nav-links"><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#proof">Proof</a><a href="#architecture">Architecture</a></div>
+      <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+        rel="noopener">Book My Free Discovery Call</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
+        <p class="eyebrow">Confidential client case study</p>
+        <h1>AI Sales Copilot for Faster, Safer Customer Replies</h1>
+        <p class="hero-copy">
+          A specialty retailer needed a faster way to understand long customer conversations, prepare product
+          recommendations, and respond consistently. I built a browser-based assistant inside the team's existing inbox
+          that creates review-ready replies and quotations while keeping every customer message under human control.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}'
+            target="_blank" rel="noopener">Book My Free Discovery Call</a>
+          <a class="button button-secondary" href="#problem">Read the business problem</a>
+        </div>
+        <div class="client-grid">
+          <div class="client-item"><span>Industry</span><strong>Specialty retail</strong></div>
+          <div class="client-item"><span>Team</span><strong>Sales and customer support</strong></div>
+          <div class="client-item"><span>Status</span><strong>Working internal pilot</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Overview</p><h2>From a long conversation to a review-ready response.</h2></div>
+        <p class="large-copy">The copilot reads the conversation already open on screen, prepares a useful response or quotation, and places it into the reply box for the employee to review. It never sends automatically.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="problem">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">The business problem</p><h2>Good sales replies took too many manual steps.</h2></div>
+          <p class="section-lede">Employees had to reread long threads, remember what the customer already said, assemble a suitable product recommendation, check the quotation, and write a clear response while other conversations continued to arrive.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>Conversation overload</h3><p>Important requirements could be buried inside a long back-and-forth conversation.</p></article>
+          <article class="card"><h3>Repeated writing</h3><p>Employees repeatedly drafted similar explanations, recommendations, and follow-up questions.</p></article>
+          <article class="card"><h3>Quotation risk</h3><p>Product names, prices, compatibility, and totals needed verified business data—not AI guesses.</p></article>
+          <article class="card"><h3>Inconsistent tone</h3><p>Reply quality and clarity could vary depending on workload and employee experience.</p></article>
+          <article class="card"><h3>Partial context</h3><p>The inbox could load only part of a conversation, creating a risk of assuming details agreed earlier.</p></article>
+          <article class="card"><h3>Automation risk</h3><p>A wrong response must never reach a customer without an employee reviewing it first.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="challenges">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Challenges</p><h2>The assistant had to be fast without taking control away from the team.</h2></div>
+        <ul class="list">
+          <li><strong>Fit the existing workflow</strong>The team should not need to leave the inbox or copy full conversations into another tool.</li>
+          <li><strong>Use verified information</strong>Product details, prices, availability, compatibility, and totals must come from trusted business data.</li>
+          <li><strong>Fail safely</strong>If conversation roles or context are uncertain, the assistant must warn the employee or ask a clarifying question.</li>
+          <li><strong>Respect customer privacy</strong>The extension reads only the open conversation and avoids broad browser permissions.</li>
+          <li><strong>Support natural communication</strong>Suggested replies need to match the customer's English, Tagalog, or Taglish.</li>
+          <li><strong>Keep humans accountable</strong>The employee remains responsible for checking, editing, and sending every response.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="solution">
+      <div class="section-inner">
+        <div class="solution-panel">
+          <p class="section-kicker">Solution</p>
+          <h2>A human-reviewed sales assistant inside the existing inbox.</h2>
+          <p class="body-copy" style="margin-top: 22px;">I built a browser extension that reads the customer conversation already visible to the employee, identifies the recent context, and sends a structured request to a private workflow backend.</p>
+          <p class="body-copy" style="margin-top: 18px;">The backend retrieves verified product information, applies deterministic quotation and compatibility rules, then uses AI only to turn those facts into a concise, natural response. If verified information is missing, the system asks a question instead of inventing an answer.</p>
+          <p class="body-copy" style="margin-top: 18px;">Employees can generate, shorten, revise, summarize, or make a response more sales-oriented. The result can be inserted into the inbox composer, but the assistant never clicks Send. Human review is a permanent safety boundary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">System architecture</p><h2>Verified data first, helpful language second, human approval last.</h2></div>
+          <p class="section-lede">The workflow separates customer context, business rules, AI writing, and final approval so the model cannot control prices or customer-facing sends.</p>
+        </div>
+        <div class="solution-panel">
+          <div class="architecture">
+            <div class="arch-node">Open conversation</div><div class="arch-node">Context extraction</div><div class="arch-node">Verified product data</div><div class="arch-node">Quotation rules</div><div class="arch-node">AI reply draft</div><div class="arch-node">Employee review</div><div class="arch-node">Manual send</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="proof">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Working proof</p><h2>The pilot proves the workflow without pretending AI is infallible.</h2></div>
+        <ul class="list">
+          <li><strong>72 automated tests</strong>The current extension test suite verifies conversation extraction, quotation behavior, reply orchestration, browser permissions, and send-safety rules.</li>
+          <li><strong>Live workflow backend</strong>The assistant sends structured requests to a working private workflow that returns review-ready replies and quotations.</li>
+          <li><strong>Human-controlled sending</strong>There is no automatic-send path; only the employee can send a customer message.</li>
+          <li><strong>Verified quotation logic</strong>Product facts and arithmetic are handled outside the language model, reducing hallucination risk.</li>
+          <li><strong>Context warnings</strong>The interface warns when only part of a conversation may be visible and encourages the employee to load more history.</li>
+          <li><strong>Fast refinement</strong>Employees can revise a quote, shorten a response, summarize the customer, or adjust the sales tone without starting again.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="technologies">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Technologies</p><h2>A lightweight layer over the tools the team already uses.</h2></div>
+        <div class="tech-list"><span>Browser extension</span><span>TypeScript</span><span>React</span><span>Workflow automation</span><span>Verified product data</span><span>Deterministic quotation logic</span><span>AI-assisted writing</span><span>Human review</span></div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="gallery">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Gallery</p><h2>The sales assistant in action.</h2></div>
+          <p class="section-lede">These sanitized screens show the employee workflow without disclosing the client, customer identities, private URLs, or internal credentials.</p>
+        </div>
+        <div class="screenshot-grid">
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/ai-sales-copilot/01-ai-assist-in-inbox.png" alt="Anonymized AI sales copilot open inside a customer conversation inbox"></div>
+            <div class="screenshot-copy"><h3>Assistance inside the existing inbox</h3><p>The employee opens the copilot without switching tabs or manually copying the full conversation into another tool.</p></div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/ai-sales-copilot/02-context-aware-replies.png" alt="AI sales copilot using visible conversation context to prepare a quotation reply"></div>
+            <div class="screenshot-copy"><h3>Conversation-aware reply generation</h3><p>The assistant reads the visible thread, identifies the customer's requirements, and prepares a response for employee review.</p></div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/ai-sales-copilot/03-one-click-reply-refinement.png" alt="Controls for shortening, revising, summarizing, or changing the sales tone of a reply"></div>
+            <div class="screenshot-copy"><h3>One-click response refinement</h3><p>Employees can shorten, revise, summarize, ask a question, or adjust the sales tone without rewriting the response from scratch.</p></div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/ai-sales-copilot/04-quick-access-workflow.png" alt="Three-step workflow to open the assistant, generate a reply, then review and insert it"></div>
+            <div class="screenshot-copy"><h3>A simple three-step workflow</h3><p>Open the assistant, generate a useful reply, then review and insert it into the conversation composer.</p></div>
+          </article>
+          <article class="gallery-card screenshot-card screenshot-card-wide">
+            <div class="screenshot-frame"><img src="images/case-studies/ai-sales-copilot/05-human-review-before-send.png" alt="Human review safeguard showing that the AI suggestion is not sent automatically"></div>
+            <div class="screenshot-copy"><h3>Human review before every send</h3><p>The interface makes the safety boundary explicit: the assistant suggests and inserts text, while the employee decides what reaches the customer.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-it-matters">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Why this matters</p><h2>Sales automation should support judgment—not replace it.</h2></div>
+        <p class="large-copy">This system removes repeated reading, quotation assembly, and response drafting while preserving the employee's responsibility for accuracy, tone, and the final customer message.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <h2>Want faster replies without unsafe auto-sending?</h2>
+        <p>Book a free discovery call and we will identify where a human-reviewed assistant can reduce repetitive sales work.</p>
+        <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+          rel="noopener">Book My Free Discovery Call</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>Joshua Dablo. Custom Automation systems for growing Businesses.</span><a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a></div></footer>
+  <script src="js/cal-embed.js"></script>
+</body>
+
+</html>
