@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, noarchive">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:url" content="https://joshuadablo.com{{ page.url }}">
+  <meta property="og:site_name" content="Joshua Dablo">
+  <title>{{ page.title | escape }} | Joshua Dablo</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/opportunity.css?v=20260901">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Opportunity brief navigation">
+      <a class="brand" href="/"><span class="brand-mark">JD</span><span>Joshua Dablo</span></a>
+      <a class="header-link" href="mailto:joshuadablo.jd@gmail.com">Email Joshua</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page-shell">
+        <p class="eyebrow">Opportunity brief</p>
+        <h1>{{ page.title | escape }}</h1>
+        <p class="hero-copy">{{ page.description | escape }}</p>
+
+        <dl class="brief-meta" aria-label="Brief details">
+          <div><dt>Prepared for</dt><dd>{{ page.recipient | escape }}</dd></div>
+          <div><dt>Prepared by</dt><dd>{{ page.prepared_by | escape }}</dd></div>
+          <div><dt>Date</dt><dd>{{ page.prepared_date | escape }}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <article class="brief">
+      <div class="brief-content">
+        {{ content }}
+      </div>
+    </article>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="page-shell cta-inner">
+        <p class="eyebrow">Next step</p>
+        <h2 id="cta-title">Is the bottleneck where I think it is?</h2>
+        <p>A short conversation would be enough to determine whether this deserves a small, measured pilot.</p>
+        <a class="button" href="{{ page.cta_url | escape }}" target="_blank" rel="noopener">{{ page.cta_label | escape }}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-inner">
+      <span>Joshua Dablo · Custom automation systems</span>
+      <a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
