@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Case study: a growing Philippine retail and ecommerce company cut monthly cloud spend by about 95 percent with a ten-minute planned cutover and a documented rollback path.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloud Cost Reduction Without Business Disruption | Joshua Dablo Case Study">
+  <meta property="og:description"
+    content="How a growing retail and ecommerce operation moved off an oversized cloud bill without losing data, uptime, or the ability to roll back.">
+  <meta property="og:url" content="https://joshuadablo.com/case-study-cloud-cost-reduction.html">
+  <meta property="og:site_name" content="Joshua Dablo">
+  <meta property="og:image" content="https://joshuadablo.com/images/professional.jpeg">
+  <title>Cloud Cost Reduction Without Business Disruption | Joshua Dablo Case Study</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="case-study.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-22MCX5TQEJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-22MCX5TQEJ');
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JD</span><span>Joshua Dablo</span></a>
+      <div class="nav-links"><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#results">Results</a><a href="#safeguards">Safeguards</a></div>
+      <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+        data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+        rel="noopener">Book My Free Discovery Call</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <a class="breadcrumb" href="index.html#other-case-studies">Back to case studies</a>
+        <p class="eyebrow">Cost reduction</p>
+        <h1>Cutting a Growing Company's Cloud Bill Without Business Disruption</h1>
+        <p class="hero-copy">
+          A growing Philippine retail and ecommerce company was paying for cloud infrastructure that had quietly grown
+          far beyond what the business actually used. I reviewed the real spending, moved the production systems to
+          owned infrastructure during a ten-minute planned window at midnight, and reduced the recurring monthly bill by
+          roughly 95 percent while keeping a documented path back to the old setup.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+            data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}'
+            target="_blank" rel="noopener">Book My Free Discovery Call</a>
+          <a class="button button-secondary" href="#problem">Read the business problem</a>
+        </div>
+        <div class="client-grid">
+          <div class="client-item"><span>Industry</span><strong>Retail and ecommerce</strong></div>
+          <div class="client-item"><span>Company size</span><strong>Growing SME</strong></div>
+          <div class="client-item"><span>Status</span><strong>Completed and verified in production</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Overview</p><h2>The bill was the symptom. Unreviewed infrastructure was the cause.</h2></div>
+        <p class="large-copy">Nobody had audited what the company was actually paying for. Once every running resource was matched against real business use, most of the monthly cost turned out to be idle capacity, duplicated databases, and services nobody had switched off.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="problem">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">The business problem</p><h2>The monthly cloud bill kept growing and nobody could explain it.</h2></div>
+          <p class="section-lede">Cloud costs are easy to start and hard to stop. Resources get created for a project, the project ends, and the charges continue quietly every month until someone sits down and traces each line item back to a business reason.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>No cost ownership</h3><p>The bill arrived monthly, but no one was responsible for reviewing what each charge was actually for.</p></article>
+          <article class="card"><h3>Idle and forgotten resources</h3><p>Servers, databases, and network components kept billing long after the work that needed them had finished.</p></article>
+          <article class="card"><h3>Oversized database tier</h3><p>The company paid for database capacity and duplicate read copies far beyond real production demand.</p></article>
+          <article class="card"><h3>Paid tools with free equivalents</h3><p>Search and log-monitoring subscriptions were billed monthly for capability that could be run on owned hardware.</p></article>
+          <article class="card"><h3>Fear of touching anything</h3><p>Without a tested rollback plan, turning things off felt risky, so everything stayed on by default.</p></article>
+          <article class="card"><h3>Cost of delay</h3><p>Every month of inaction repeated the same avoidable spend on infrastructure the business had outgrown the need for.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="challenges">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Challenges</p><h2>Saving money is easy. Saving money without breaking the business is the job.</h2></div>
+        <ul class="list">
+          <li><strong>Live revenue systems</strong>The ecommerce storefront and internal operations ran on the systems being moved, so an outage would cost real sales.</li>
+          <li><strong>No acceptable data loss</strong>Order and transaction records had to arrive complete, with no gap between the old and new systems.</li>
+          <li><strong>Unknown true baseline</strong>The real recurring cost had to be measured from the provider's own billing data, not estimated.</li>
+          <li><strong>Reversibility</strong>The business needed a way back if the new setup failed after the switch.</li>
+          <li><strong>Capacity confidence</strong>The replacement had to be proven able to handle peak traffic before, not after, the switch.</li>
+          <li><strong>Ongoing protection</strong>Backups, monitoring, and recovery had to be in place so the savings did not create a new risk.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="solution">
+      <div class="section-inner">
+        <div class="solution-panel">
+          <p class="section-kicker">Solution</p>
+          <h2>Measure first, prove the replacement, switch in a controlled window, then remove cost in stages.</h2>
+          <p class="body-copy" style="margin-top: 22px;">I started by establishing the true cost baseline from the provider's own cost reporting across several months, then inventoried every running resource and matched it against an actual business purpose. Anything that could not be justified was flagged, not immediately deleted.</p>
+          <p class="body-copy" style="margin-top: 18px;">In parallel I built the replacement environment on owned infrastructure and load tested it against roughly five times the company's normal peak traffic, requiring a clean result before the switch was scheduled at all.</p>
+          <p class="body-copy" style="margin-top: 18px;">The production switch itself ran in a planned ten-minute window at midnight, chosen so customer impact was minimal. The database was brought forward to an exact matching position so no records were lost in the handover.</p>
+          <p class="body-copy" style="margin-top: 18px;">Only after the new environment ran cleanly did I remove the old infrastructure, in deliberate stages with the owner approving each round, and only after preserving named recovery snapshots and a written rollback procedure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Approach</p><h2>From an unreviewed bill to a measured, reversible reduction.</h2></div>
+          <p class="section-lede">Each stage had to pass before the next one started. That sequence is what made an aggressive cost reduction safe to perform on live business systems.</p>
+        </div>
+        <div class="solution-panel">
+          <div class="architecture">
+            <div class="arch-node">Measure real baseline</div><div class="arch-node">Inventory every resource</div><div class="arch-node">Build replacement</div><div class="arch-node">Load test at 5x peak</div><div class="arch-node">Planned cutover</div><div class="arch-node">Verify in production</div><div class="arch-node">Staged teardown</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="results">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Business results</p><h2>About 95 percent lower recurring cloud cost, measured after the fact.</h2></div>
+          <p class="section-lede">These figures come from the provider's own cost reporting after billing data settled, compared against the measured multi-month average before the project. They are not projections.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>Roughly 95% lower monthly bill</h3><p>A multi-month average of about 1,744 US dollars per month fell to a settled run rate of roughly 75 US dollars per month.</p></article>
+          <article class="card"><h3>Paid for itself in under a month</h3><p>The temporary overlap cost of running both environments during the migration was recovered by the savings within the first month.</p></article>
+          <article class="card"><h3>Ten-minute planned window</h3><p>The production switch ran inside a scheduled midnight window rather than an unplanned outage.</p></article>
+          <article class="card"><h3>No data loss</h3><p>The new database was advanced to an exact matching position, so records carried over completely.</p></article>
+          <article class="card"><h3>Faster product search</h3><p>Moving search off a paid hosted tier onto owned infrastructure cut typical search response from hundreds of milliseconds to about one millisecond.</p></article>
+          <article class="card"><h3>Subscriptions retired</h3><p>Paid search hosting and paid log monitoring were replaced with equivalents running on hardware the business already owned.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="safeguards">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Safeguards</p><h2>Every step had a way back before it was taken.</h2></div>
+        <ul class="list">
+          <li><strong>Capacity proven before the switch</strong>The replacement passed a load test at about five times normal peak traffic with no failed requests before any cutover was scheduled.</li>
+          <li><strong>Written rollback procedure</strong>A step-by-step return path to the previous environment was documented and kept available, with an expected completion time well under an hour.</li>
+          <li><strong>Named recovery snapshots retained</strong>Point-in-time database snapshots from immediately before the switch were preserved as the recovery anchor rather than deleted with everything else.</li>
+          <li><strong>Staged teardown with owner approval</strong>Old infrastructure was removed in separate rounds, each one explicitly approved, instead of a single irreversible cleanup.</li>
+          <li><strong>Nightly offsite backups</strong>Automated nightly database backups to separate storage were verified as actually landing, not assumed.</li>
+          <li><strong>Monitoring kept in place</strong>Log collection and dashboards were re-established on the new environment so problems stayed visible after the savings were realized.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="technologies">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Technologies</p><h2>Standard, well-understood infrastructure rather than novel tooling.</h2></div>
+        <div class="tech-list"><span>AWS</span><span>Cost Explorer</span><span>MySQL</span><span>Docker</span><span>Linux</span><span>Caddy</span><span>Typesense</span><span>Grafana Loki</span><span>Load testing</span><span>Automated backups</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="why-it-matters">
+      <div class="section-inner two-column">
+        <div><p class="section-kicker">Why this matters</p><h2>Recurring cost is the easiest money a business ever gets back.</h2></div>
+        <p class="large-copy">Most growing companies never audit infrastructure spending, because it is nobody's job and everybody is afraid to switch something off. A careful review with a tested rollback plan turns that fear into a permanent monthly saving that continues every year without further effort.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <h2>Not sure what your cloud bill is actually paying for?</h2>
+        <p>Book a free discovery call and we will look at where the recurring spend is going and whether it can be reduced safely.</p>
+        <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
+          data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
+          rel="noopener">Book My Free Discovery Call</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>Joshua Dablo. Custom Automation systems for growing Businesses.</span><a href="mailto:joshuadablo.jd@gmail.com">joshuadablo.jd@gmail.com</a></div></footer>
+  <script src="js/cal-embed.js"></script>
+</body>
+
+</html>
