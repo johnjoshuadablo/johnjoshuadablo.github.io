@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Case study: a growing Philippine retail and ecommerce company cut monthly cloud spend by about 95 percent with a ten-minute planned cutover and a documented rollback path.">
+    content="Case study: a growing Philippine retail and ecommerce company cut recurring cloud and software spend by about 93 percent, roughly 1.8 million pesos a year, with a ten-minute planned cutover and a documented rollback path.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Cloud Cost Reduction Without Business Disruption | Joshua Dablo Case Study">
   <meta property="og:description"
-    content="How a growing retail and ecommerce operation moved off an oversized cloud bill without losing data, uptime, or the ability to roll back.">
+    content="How a growing retail and ecommerce operation cut about 1.8 million pesos a year of recurring cloud and software cost without losing data, uptime, or the ability to roll back.">
   <meta property="og:url" content="https://joshuadablo.com/case-study-cloud-cost-reduction.html">
   <meta property="og:site_name" content="Joshua Dablo">
   <meta property="og:image" content="https://joshuadablo.com/images/professional.jpeg">
@@ -31,7 +31,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="index.html"><span class="brand-mark">JD</span><span>Joshua Dablo</span></a>
-      <div class="nav-links"><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#results">Results</a><a href="#safeguards">Safeguards</a></div>
+      <div class="nav-links"><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#chart">Numbers</a><a href="#results">Results</a><a href="#breakdown">Breakdown</a><a href="#safeguards">Safeguards</a></div>
       <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
         data-cal-link="joshua-dablo-vmto3x/free-automation-discovery-call"
         data-cal-namespace="free-automation-discovery-call" data-cal-config='{"layout":"month_view"}' target="_blank"
@@ -46,10 +46,10 @@
         <p class="eyebrow">Cost reduction</p>
         <h1>Cutting a Growing Company's Cloud Bill Without Business Disruption</h1>
         <p class="hero-copy">
-          A growing Philippine retail and ecommerce company was paying for cloud infrastructure that had quietly grown
-          far beyond what the business actually used. I reviewed the real spending, moved the production systems to
-          owned infrastructure during a ten-minute planned window at midnight, and reduced the recurring monthly bill by
-          roughly 95 percent while keeping a documented path back to the old setup.
+          A growing Philippine retail and ecommerce company was paying for cloud hosting and software subscriptions that
+          had quietly grown far beyond what the business actually used. I reviewed every recurring charge against real
+          usage, replaced four paid services with systems running on hardware the company already owned, and cut the
+          recurring bill by about 93 percent, roughly 1.8 million pesos a year, with a documented path back at every step.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://cal.com/joshua-dablo-vmto3x/free-automation-discovery-call"
@@ -61,29 +61,29 @@
         <div class="client-grid">
           <div class="client-item"><span>Industry</span><strong>Retail and ecommerce</strong></div>
           <div class="client-item"><span>Company size</span><strong>Growing SME</strong></div>
-          <div class="client-item"><span>Status</span><strong>Completed and verified in production</strong></div>
+          <div class="client-item"><span>Annual saving</span><strong>About &#8369;1.8M a year</strong></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="overview">
       <div class="section-inner two-column">
-        <div><p class="section-kicker">Overview</p><h2>The bill was the symptom. Unreviewed infrastructure was the cause.</h2></div>
-        <p class="large-copy">Nobody had audited what the company was actually paying for. Once every running resource was matched against real business use, most of the monthly cost turned out to be idle capacity, duplicated databases, and services nobody had switched off.</p>
+        <div><p class="section-kicker">Overview</p><h2>The bill was the symptom. Nobody reviewing it was the cause.</h2></div>
+        <p class="large-copy">Once every recurring charge was matched against real business use, most of the monthly spend turned out to be idle capacity, duplicated databases, and paid subscriptions that could run on hardware the company already owned.</p>
       </div>
     </section>
 
     <section class="section section-muted" id="problem">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">The business problem</p><h2>The monthly cloud bill kept growing and nobody could explain it.</h2></div>
+          <div><p class="section-kicker">The business problem</p><h2>The monthly bills kept growing and nobody could explain them.</h2></div>
           <p class="section-lede">Cloud costs are easy to start and hard to stop. Resources get created for a project, the project ends, and the charges continue quietly every month until someone sits down and traces each line item back to a business reason.</p>
         </div>
         <div class="card-grid">
           <article class="card"><h3>No cost ownership</h3><p>The bill arrived monthly, but no one was responsible for reviewing what each charge was actually for.</p></article>
           <article class="card"><h3>Idle and forgotten resources</h3><p>Servers, databases, and network components kept billing long after the work that needed them had finished.</p></article>
           <article class="card"><h3>Oversized database tier</h3><p>The company paid for database capacity and duplicate read copies far beyond real production demand.</p></article>
-          <article class="card"><h3>Paid tools with free equivalents</h3><p>Search and log-monitoring subscriptions were billed monthly for capability that could be run on owned hardware.</p></article>
+          <article class="card"><h3>Paid tools with free equivalents</h3><p>Analytics, search, and log-monitoring subscriptions were billed every month for capability that could run on hardware the company already owned.</p></article>
           <article class="card"><h3>Fear of touching anything</h3><p>Without a tested rollback plan, turning things off felt risky, so everything stayed on by default.</p></article>
           <article class="card"><h3>Cost of delay</h3><p>Every month of inaction repeated the same avoidable spend on infrastructure the business had outgrown the need for.</p></article>
         </div>
@@ -96,7 +96,7 @@
         <ul class="list">
           <li><strong>Live revenue systems</strong>The ecommerce storefront and internal operations ran on the systems being moved, so an outage would cost real sales.</li>
           <li><strong>No acceptable data loss</strong>Order and transaction records had to arrive complete, with no gap between the old and new systems.</li>
-          <li><strong>Unknown true baseline</strong>The real recurring cost had to be measured from the provider's own billing data, not estimated.</li>
+          <li><strong>Unknown true baseline</strong>The real recurring cost had to be measured from finalized invoices and provider billing data, not estimated from memory.</li>
           <li><strong>Reversibility</strong>The business needed a way back if the new setup failed after the switch.</li>
           <li><strong>Capacity confidence</strong>The replacement had to be proven able to handle peak traffic before, not after, the switch.</li>
           <li><strong>Ongoing protection</strong>Backups, monitoring, and recovery had to be in place so the savings did not create a new risk.</li>
@@ -131,20 +131,133 @@
       </div>
     </section>
 
-    <section class="section section-muted" id="results">
+        <section class="section section-muted" id="chart">
       <div class="section-inner">
         <div class="section-heading">
-          <div><p class="section-kicker">Business results</p><h2>About 95 percent lower recurring cloud cost, measured after the fact.</h2></div>
-          <p class="section-lede">These figures come from the provider's own cost reporting after billing data settled, compared against the measured multi-month average before the project. They are not projections.</p>
+          <div><p class="section-kicker">The numbers</p><h2>The same bill, before and after the decision to review it.</h2></div>
+          <p class="section-lede">January to August are finalized actuals from provider invoices. September onward reflects the migrated path, with the remaining months modelled at verified rates. Figures in Philippine pesos.</p>
+        </div>
+        <div class="solution-panel">
+          <svg viewBox="0 0 640 340" role="img" aria-labelledby="c1t c1d" style="width:100%;height:auto;display:block">
+          <title id="c1t">Monthly recurring technology cost through 2026</title>
+          <desc id="c1d">Costs are identical from January to August, then fall sharply from September after the migration, from about 162,000 pesos a month to about 12,000 pesos a month by December.</desc>
+          <rect x="439.3" y="22" width="186.7" height="264" fill="rgba(255,255,255,0.05)"/>
+          <line x1="66" y1="22.0" x2="626" y2="22.0" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <text x="58" y="22.0" text-anchor="end" dominant-baseline="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">255k</text>
+          <line x1="66" y1="88.0" x2="626" y2="88.0" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <text x="58" y="88.0" text-anchor="end" dominant-baseline="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">192k</text>
+          <line x1="66" y1="154.0" x2="626" y2="154.0" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <text x="58" y="154.0" text-anchor="end" dominant-baseline="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">128k</text>
+          <line x1="66" y1="220.0" x2="626" y2="220.0" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <text x="58" y="220.0" text-anchor="end" dominant-baseline="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">64k</text>
+          <line x1="66" y1="286.0" x2="626" y2="286.0" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <text x="58" y="286.0" text-anchor="end" dominant-baseline="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">0</text>
+          <rect x="72.8" y="63.2" width="15.0" height="222.8" fill="#8a93a3"/>
+          <rect x="90.8" y="63.2" width="15.0" height="222.8" fill="#2fbd8c"/>
+          <text x="89.3" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Jan</text>
+          <rect x="119.5" y="102.4" width="15.0" height="183.6" fill="#8a93a3"/>
+          <rect x="137.5" y="102.4" width="15.0" height="183.6" fill="#2fbd8c"/>
+          <text x="136.0" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Feb</text>
+          <rect x="166.2" y="100.4" width="15.0" height="185.6" fill="#8a93a3"/>
+          <rect x="184.2" y="100.4" width="15.0" height="185.6" fill="#2fbd8c"/>
+          <text x="182.7" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Mar</text>
+          <rect x="212.8" y="105.7" width="15.0" height="180.3" fill="#8a93a3"/>
+          <rect x="230.8" y="105.7" width="15.0" height="180.3" fill="#2fbd8c"/>
+          <text x="229.3" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Apr</text>
+          <rect x="259.5" y="117.9" width="15.0" height="168.1" fill="#8a93a3"/>
+          <rect x="277.5" y="117.9" width="15.0" height="168.1" fill="#2fbd8c"/>
+          <text x="276.0" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">May</text>
+          <rect x="306.2" y="127.8" width="15.0" height="158.2" fill="#8a93a3"/>
+          <rect x="324.2" y="127.8" width="15.0" height="158.2" fill="#2fbd8c"/>
+          <text x="322.7" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Jun</text>
+          <rect x="352.8" y="128.7" width="15.0" height="157.3" fill="#8a93a3"/>
+          <rect x="370.8" y="128.7" width="15.0" height="157.3" fill="#2fbd8c"/>
+          <text x="369.3" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Jul</text>
+          <rect x="399.5" y="50.3" width="15.0" height="235.7" fill="#8a93a3"/>
+          <rect x="417.5" y="50.3" width="15.0" height="235.7" fill="#2fbd8c"/>
+          <text x="416.0" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Aug</text>
+          <rect x="446.2" y="118.4" width="15.0" height="167.6" fill="#8a93a3"/>
+          <rect x="464.2" y="206.0" width="15.0" height="80.0" fill="#2fbd8c"/>
+          <text x="462.7" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Sep</text>
+          <rect x="492.8" y="118.4" width="15.0" height="167.6" fill="#8a93a3"/>
+          <rect x="510.8" y="274.0" width="15.0" height="12.0" fill="#2fbd8c"/>
+          <text x="509.3" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Oct</text>
+          <rect x="539.5" y="118.4" width="15.0" height="167.6" fill="#8a93a3"/>
+          <rect x="557.5" y="274.0" width="15.0" height="12.0" fill="#2fbd8c"/>
+          <text x="556.0" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Nov</text>
+          <rect x="586.2" y="118.4" width="15.0" height="167.6" fill="#8a93a3"/>
+          <rect x="604.2" y="273.2" width="15.0" height="12.8" fill="#2fbd8c"/>
+          <text x="602.7" y="303" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">Dec</text>
+          <line x1="439.3" y1="22" x2="439.3" y2="286" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="444.3" y="33" font-size="11" font-weight="700" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">MIGRATION</text>
+          <rect x="66" y="317" width="11" height="11" fill="#8a93a3"/><text x="83" y="326" font-size="13" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">If nothing changed</text>
+          <rect x="236" y="317" width="11" height="11" fill="#2fbd8c"/><text x="253" y="326" font-size="13" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Actual path taken</text>
+          </svg>
+          <p class="body-copy" style="margin-top:20px">Nothing changes for eight months, because nothing had been reviewed. The gap opens in September, when the migration completed, and stays open every month afterwards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Business results</p><h2>About 93 percent lower recurring cost, roughly &#8369;1.8 million a year.</h2></div>
+          <p class="section-lede">These figures come from the providers' own billing data and paid invoices, compared against what the same services would have cost if nothing had changed. January to August are finalized actuals; the remaining months are modelled at verified rates.</p>
         </div>
         <div class="card-grid">
-          <article class="card"><h3>Roughly 95% lower monthly bill</h3><p>A multi-month average of about 1,744 US dollars per month fell to a settled run rate of roughly 75 US dollars per month.</p></article>
-          <article class="card"><h3>Paid for itself in under a month</h3><p>The temporary overlap cost of running both environments during the migration was recovered by the savings within the first month.</p></article>
-          <article class="card"><h3>Ten-minute planned window</h3><p>The production switch ran inside a scheduled midnight window rather than an unplanned outage.</p></article>
-          <article class="card"><h3>No data loss</h3><p>The new database was advanced to an exact matching position, so records carried over completely.</p></article>
-          <article class="card"><h3>Faster product search</h3><p>Moving search off a paid hosted tier onto owned infrastructure cut typical search response from hundreds of milliseconds to about one millisecond.</p></article>
-          <article class="card"><h3>Subscriptions retired</h3><p>Paid search hosting and paid log monitoring were replaced with equivalents running on hardware the business already owned.</p></article>
+          <article class="card"><h3>About &#8369;150,000 saved monthly</h3><p>Recurring spend fell from roughly &#8369;162,000 per month to about &#8369;12,000 per month across the four services reviewed.</p></article>
+          <article class="card"><h3>About &#8369;1.8 million a year</h3><p>The reduced monthly run rate continues every year without further work, making it a permanent change to the cost base rather than a one-off saving.</p></article>
+          <article class="card"><h3>About 93 percent lower</h3><p>The combined bill for hosting, analytics, search, and log monitoring dropped by roughly 93 percent after the migration completed.</p></article>
+          <article class="card"><h3>Paid for itself in under a month</h3><p>The temporary cost of running both environments during the migration was recovered by the savings within the first month.</p></article>
+          <article class="card"><h3>Ten-minute planned window</h3><p>The production switch ran inside a scheduled midnight window rather than an unplanned outage, with no data loss.</p></article>
+          <article class="card"><h3>Faster product search</h3><p>Moving search onto owned infrastructure cut typical search response from hundreds of milliseconds to about one millisecond.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="breakdown">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="section-kicker">Where the money went</p><h2>Four recurring bills, reviewed one at a time.</h2></div>
+          <p class="section-lede">Each service was assessed on its own: what it cost, what it actually did for the business, and whether an equivalent could run on hardware the company already owned.</p>
+        </div>
+        <ul class="list">
+          <li><strong>Cloud hosting</strong>The largest line item. Application servers, databases, and staging environments moved to owned infrastructure, reducing this bill by roughly 96 percent.</li>
+          <li><strong>Product analytics subscription</strong>Replaced with a self-hosted equivalent, removing the monthly fee entirely.</li>
+          <li><strong>Hosted search service</strong>Moved onto owned infrastructure, removing the subscription and making search dramatically faster at the same time.</li>
+          <li><strong>Log monitoring subscription</strong>Replaced with open-source log collection and dashboards, removing the monthly fee while keeping visibility.</li>
+          <li><strong>Honest accounting</strong>The savings figure subtracts an operating allowance for running the owned infrastructure, so it reflects net benefit rather than a headline number.</li>
+        </ul>
+        <div class="solution-panel" style="margin-top:26px">
+          <svg viewBox="0 0 640 252" role="img" aria-labelledby="c2t c2d" style="width:100%;height:auto;display:block">
+          <title id="c2t">Monthly cost by service, before and after</title>
+          <desc id="c2d">Cloud hosting fell from about 99,000 pesos to about 4,000 pesos a month. Analytics, hosted search, and log monitoring subscriptions were removed entirely.</desc>
+          <text x="0" y="33" font-size="14" font-weight="600" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Cloud hosting</text>
+          <rect x="170" y="22" width="358.0" height="13" rx="2" fill="#8a93a3"/>
+          <text x="536.0" y="32" font-size="12.5" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">&#8369;99,408</text>
+          <rect x="170" y="41" width="14.0" height="13" rx="2" fill="#2fbd8c"/>
+          <text x="192.0" y="51" font-size="12.5" font-weight="600" fill="#2fbd8c" font-family="system-ui,Arial">&#8369;3,876</text>
+          <text x="0" y="85" font-size="14" font-weight="600" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Analytics subscription</text>
+          <rect x="170" y="74" width="125.7" height="13" rx="2" fill="#8a93a3"/>
+          <text x="303.7" y="84" font-size="12.5" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">&#8369;34,912</text>
+          <rect x="170" y="93" width="0.0" height="13" rx="2" fill="#2fbd8c"/>
+          <text x="178.0" y="103" font-size="12.5" font-weight="600" fill="#2fbd8c" font-family="system-ui,Arial">Removed</text>
+          <text x="0" y="137" font-size="14" font-weight="600" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Hosted search</text>
+          <rect x="170" y="126" width="76.0" height="13" rx="2" fill="#8a93a3"/>
+          <text x="254.0" y="136" font-size="12.5" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">&#8369;21,090</text>
+          <rect x="170" y="145" width="0.0" height="13" rx="2" fill="#2fbd8c"/>
+          <text x="178.0" y="155" font-size="12.5" font-weight="600" fill="#2fbd8c" font-family="system-ui,Arial">Removed</text>
+          <text x="0" y="189" font-size="14" font-weight="600" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Log monitoring</text>
+          <rect x="170" y="178" width="24.3" height="13" rx="2" fill="#8a93a3"/>
+          <text x="202.3" y="188" font-size="12.5" fill="rgba(255,255,255,0.62)" font-family="system-ui,Arial">&#8369;6,754</text>
+          <rect x="170" y="197" width="0.0" height="13" rx="2" fill="#2fbd8c"/>
+          <text x="178.0" y="207" font-size="12.5" font-weight="600" fill="#2fbd8c" font-family="system-ui,Arial">Removed</text>
+          <rect x="170" y="225" width="11" height="11" fill="#8a93a3"/><text x="187" y="234" font-size="13" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">Before</text>
+          <rect x="260" y="225" width="11" height="11" fill="#2fbd8c"/><text x="277" y="234" font-size="13" fill="rgba(255,255,255,0.92)" font-family="system-ui,Arial">After</text>
+          </svg>
+          <p class="body-copy" style="margin-top:20px">Three subscriptions were removed outright. The remaining hosting bill dropped by about 96 percent once idle and duplicated resources were retired.</p>
+        </div>
+
       </div>
     </section>
 
@@ -172,7 +285,7 @@
     <section class="section" id="why-it-matters">
       <div class="section-inner two-column">
         <div><p class="section-kicker">Why this matters</p><h2>Recurring cost is the easiest money a business ever gets back.</h2></div>
-        <p class="large-copy">Most growing companies never audit infrastructure spending, because it is nobody's job and everybody is afraid to switch something off. A careful review with a tested rollback plan turns that fear into a permanent monthly saving that continues every year without further effort.</p>
+        <p class="large-copy">Most growing companies never audit recurring technology spending, because it is nobody's job and everybody is afraid to switch something off. A careful review with a tested rollback plan turns that fear into a permanent reduction in the cost base, money the business keeps every month from then on without further effort.</p>
       </div>
     </section>
 
